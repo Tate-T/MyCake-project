@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 const Searchbar = styled.div`
   display: flex;
   margin: 40px 0px;

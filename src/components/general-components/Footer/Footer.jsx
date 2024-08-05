@@ -2,6 +2,7 @@ import styled from "styled-components";
 import location from "../../../svg/location_pin.svg";
 import yut from "../../../svg/Youtube_black.svg";
 import inst from "../../../svg/Instagram.svg";
+import { Container } from "../Container/Container.styled";
 const Foooter = styled.footer`
   background: var(--Black, #011936);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
@@ -155,52 +156,54 @@ align-items: center;
 export default function Footerr() {
   return (
     <>
-    <Foooter>
-      <List>
-        <li>
-          <Boxes>
-            <GlawText>My Cake</GlawText>
-            <Location>
-              <SvgLocation href={location} />
-              <TextInLocete>Вся Україна</TextInLocete>
-            </Location>
-          </Boxes>
-        </li>
-        <li>
-          <BoxesFlex>
-            <Links href="#">
-              <MediumText>Десерти</MediumText>
-            </Links>
-            <Links href="#">
-              <MediumText>Кращі кондитери</MediumText>
-            </Links>
-            <Links href="#">
-              <MediumText>Корисні статті</MediumText>
-            </Links>
-          </BoxesFlex>
-        </li>
-        <li>
-          <BoxesBtn>
-            <BtnPrav>Правила користування</BtnPrav>
-            <BtnInfo>Форма зворотнього зв’язку</BtnInfo>
-          </BoxesBtn>
-        </li>
-        <li>
-          <BoxTextInfoInst>
-            <TextInfoInst>© Mycake 2022</TextInfoInst>
-            <TextInfoInst>All rights reserved</TextInfoInst>
-            <BoxesInst>
-              <Links href="https://www.instagram.com/">
-                <SvgInst href={inst} />
-              </Links>
-              <Links href="https://www.youtube.com/">
-                <SvgYutybe href={yut} />
-              </Links>
-            </BoxesInst>
-          </BoxTextInfoInst>
-        </li>
-      </List>
-    </Foooter>
+      <Foooter>
+        <Container>
+          <List>
+            <li>
+              <Boxes>
+                <GlawText>My Cake</GlawText>
+                <Location>
+                  <SvgLocation href={location} />
+                  <TextInLocete>Вся Україна</TextInLocete>
+                </Location>
+              </Boxes>
+            </li>
+            <li>
+              <BoxesFlex>
+                <Links href="#">
+                  <MediumText>Десерти</MediumText>
+                </Links>
+                <Links href="#">
+                  <MediumText>Кращі кондитери</MediumText>
+                </Links>
+                <Links href="#">
+                  <MediumText>Корисні статті</MediumText>
+                </Links>
+              </BoxesFlex>
+            </li>
+            <li>
+              <BoxesBtn>
+                <BtnPrav>Правила користування</BtnPrav>
+                <BtnInfo>Форма зворотнього зв’язку</BtnInfo>
+              </BoxesBtn>
+            </li>
+            <li>
+              <BoxTextInfoInst>
+                <TextInfoInst>© Mycake 2022</TextInfoInst>
+                <TextInfoInst>All rights reserved</TextInfoInst>
+                <BoxesInst>
+                  <Links href="https://www.instagram.com/">
+                    <SvgInst href={inst} />
+                  </Links>
+                  <Links href="https://www.youtube.com/">
+                    <SvgYutybe href={yut} />
+                  </Links>
+                </BoxesInst>
+              </BoxTextInfoInst>
+            </li>
+          </List>
+        </Container>
+      </Foooter>
     </>
   );
 }

@@ -825,8 +825,8 @@ export const Main = () => {
       <Container><ListTopPip></ListTopPip></Container>
       <Container><ListState></ListState></Container>
 
- <Container>  <Footerr></Footerr></Container>
-    
+      <Container>  <Footerr></Footerr></Container>
+
 
     </>
   );

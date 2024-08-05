@@ -67,7 +67,7 @@ const HeaderWrapper = styled.div`
   align-items: center;
 `;
 
-const Header = () => {
+const Header1 = () => {
   return (
     <Header>
       <Container>
@@ -100,4 +100,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header1;
