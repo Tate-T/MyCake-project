@@ -1,9 +1,9 @@
-import { Header } from "../../components/general-components/Header/Header.styled";
-import { Container } from "../../components/general-components/Container/Container.styled";
-import { Logo } from "../../components/general-components/Logo/Logo.styled";
-import Chat from "../../imgs/chat.svg";
-import Login from "../../imgs/login.svg";
-import Position from "../../imgs/position.svg";
+import { Header } from "./Header.styled";
+import { Container } from "../Container/Container.styled";
+import { Logo } from "../Logo/Logo.styled";
+import Chat from "../../../imgs/chat.svg";
+import Login from "../../../imgs/login.svg";
+import Position from "../../../imgs/position.svg";
 import styled from "styled-components";
 
 const LocationBtn = styled.button`
@@ -67,37 +67,37 @@ const HeaderWrapper = styled.div`
   align-items: center;
 `;
 
-const Header1 = () => {
-  return (
-    <Header>
-      <Container>
-        <HeaderWrapper>
-          <Logo>MyCake</Logo>
-          <LocationBtn type="button">
-            <PositionIcon />
-            Вся Україна
-          </LocationBtn>
-          <HeaderList>
-            <li>
-              <HeaderLink>Десерти</HeaderLink>
-            </li>
-            <li>
-              <HeaderLink>Кращі кондитери</HeaderLink>
-            </li>
-            <li>
-              <HeaderLink>Корисні статті</HeaderLink>
-            </li>
-          </HeaderList>
+ export const HeaderComp = () => {
+    return (
+      <Header>
+        <Container>
+          <HeaderWrapper>
+            <Logo>MyCake</Logo>
+            <LocationBtn type="button">
+              <PositionIcon />
+              Вся Україна
+            </LocationBtn>
+            <HeaderList>
+              <li>
+                <HeaderLink>Десерти</HeaderLink>
+              </li>
+              <li>
+                <HeaderLink>Кращі кондитери</HeaderLink>
+              </li>
+              <li>
+                <HeaderLink>Корисні статті</HeaderLink>
+              </li>
+            </HeaderList>
+  
+            <HeaderBlock>
+              <ChatIcon />
+              <LoginIcon />
+              Увійти
+            </HeaderBlock>
+          </HeaderWrapper>
+        </Container>
+      </Header>
+    );
+  };
+  ;
 
-          <HeaderBlock>
-            <ChatIcon />
-            <LoginIcon />
-            Увійти
-          </HeaderBlock>
-        </HeaderWrapper>
-      </Container>
-    </Header>
-  );
-};
-
-export default Header1;
