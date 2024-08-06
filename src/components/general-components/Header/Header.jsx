@@ -1,9 +1,9 @@
-import { Header } from "../../components/general-components/Header/Header.styled";
-import { Container } from "../../components/general-components/Container/Container.styled";
-import { Logo } from "../../components/general-components/Logo/Logo.styled";
-import Chat from "../../imgs/chat.svg";
-import Login from "../../imgs/login.svg";
-import Position from "../../imgs/position.svg";
+import { Header } from "./Header.styled";
+import { Container } from "../Container/Container.styled";
+import { Logo } from "../Logo/Logo.styled";
+import Chat from "../../../imgs/chat.svg";
+import Login from "../../../imgs/login.svg";
+import Position from "../../../imgs/position.svg";
 import styled from "styled-components";
 
 const LocationBtn = styled.button`
@@ -67,7 +67,7 @@ const HeaderWrapper = styled.div`
   align-items: center;
 `;
 
-export default () => {
+ export const HeaderComp = () => {
     return (
       <Header>
         <Container>
@@ -100,3 +100,4 @@ export default () => {
     );
   };
   ;
+
