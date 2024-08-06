@@ -23,8 +23,7 @@ const Boxes = styled.div`
 
 `;
 const BoxesFlexInfo = styled.div`
-position: absolute;
-right: 205px;
+margin-left: auto;
 display:flex;
 `;
 const GlawTxtState = styled.h2`
@@ -138,6 +137,7 @@ line-height: 24px;
 `;
 export default function ListTopPip() {
   return (
+    <>
     <GlawBox>
       <BoxesFlex>
         <GlawTxtState>Кращі кондитери</GlawTxtState>
@@ -272,6 +272,7 @@ export default function ListTopPip() {
 
       </Ul>
     </GlawBox>
+    </>
   );
 }
 

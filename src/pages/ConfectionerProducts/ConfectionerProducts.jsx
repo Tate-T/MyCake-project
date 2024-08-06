@@ -9,6 +9,7 @@ import Searchbar from "../../components/general-components/Searchbar/Searchbar.j
 import leftArrow from "../../svg/leftArrow.svg";
 import rightArrow from "../../svg/rihtAroow.svg";
 import Footerr from "../../components/general-components/Footer/Footer.jsx";
+import Header from "../../components/general-components/Header/Header.jsx";
 
 const NavCont = styled.div`
     display: flex;
@@ -314,6 +315,7 @@ const Pages = styled.div`
 
 const ConfectionerProducts = () => 
 <>
+    <Header />  
     <section>
         <Container>
             <Searchbar placeholder="Шоколадний торт з квітами" />
@@ -484,7 +486,7 @@ const ConfectionerProducts = () =>
             <ListTopPip></ListTopPip>
             <ListState></ListState>
         </Container>
-        </section>
-        
+    </section>
+    <Footerr />    
 </>
 export default ConfectionerProducts;
