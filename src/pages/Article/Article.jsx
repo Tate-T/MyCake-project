@@ -5,7 +5,12 @@ import { Logo } from "../../components/general-components/Logo/Logo.styled";
 import Chat from "../../imgs/chat.svg";
 import Login from "../../imgs/login.svg";
 import Position from "../../imgs/position.svg";
+import Banner from "../../imgs/article-banner.jpeg";
 import Footerr from "../../components/general-components/Footer/Footer";
+import ArrowLeft from "../../imgs/sm-arrow-left.svg";
+import ArrowRight from "../../imgs/sm-arrow-right.svg";
+import Article1 from "../../imgs/StatePng/photoState.png";
+import Article2 from "../../imgs/StatePng/photoState4.png";
 
 const LocationBtn = styled.button`
   border-radius: 36px;
@@ -84,31 +89,108 @@ const ArticleBtn = styled.button`
   background-color: rgb(253, 173, 109);
 `;
 
-const ArticleWrapper = styled.div`
-  width: 1000px;
-`;
 const ArticleBanner = styled.img`
   overflow: hidden;
   border-radius: 10px;
   width: 100%;
 `;
 
-const ArticleTitle = styled.img`
+const ArticleTitle = styled.h2`
   color: rgb(67, 96, 124);
   font-size: 35px;
   font-weight: 400;
   line-height: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 `;
+ArticleBanner.defaultProps = {
+  src: Banner,
+};
 const ArticleBlock = styled.div`
   gap: 30px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 const ArticleText = styled.p`
   color: rgb(67, 96, 124);
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
+  font-family: "Verdana";
+  text-align: left;
+  &:nth-of-type(2) {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+`;
+const ArticleBoldText = styled.span`
+  font-weight: 700;
 `;
 
+const ArticlesList = styled.ul`
+  gap: 40px;
+  display: flex;
+  margin-top: 40px;
+`;
+
+const ArticlesItem = styled.li`
+  width: 480px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px 0px rgba(67, 96, 124, 0.25);
+  &:last-child div  {
+    justify-content: flex-end;
+    padding-left: 0;
+    padding-right: 20px;
+  }
+`;
+const ArticlesWrapper = styled.div`
+  display: flex;
+  align-content: center;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  outline: 1px solid red;
+  /* width: 100%; */
+`;
+const ArticlesText = styled.p`
+  color: rgb(67, 96, 124);
+  font-family: Verdana;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  display: block;
+`;
+const ArticlesSubtitle = styled.h3`
+  color: rgb(67, 96, 124);
+  font-family: Verdana;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  display: inline;
+  padding-left: 24px;
+  /* margin-top: 20px; */
+`;
+const ArticlesIcon = styled.img`
+  margin-right: 10px;
+  width: 24px;
+  display: inline;
+  &:nth-of-type(2) {
+    margin-left: 10px;
+  }
+`;
+ArticlesIcon.defaultProps = {
+  src: ArrowLeft,
+};
+
+const ArticlesImg = styled.img`
+  width: 100%;
+  margin-bottom: 20px;
+`;
+ArticlesImg.defaultProps = {
+  src: Article1,
+};
 export const ArticlePage = () => {
   return (
     <>
@@ -207,8 +289,26 @@ export const ArticlePage = () => {
               тільки по верхньому шару, не чіпаючи листкових боків, щоб уникнути
               їх склеювання. Розігрій духовку до 220-230 градусів за Цельсієм.
               Випікай круасан 18-20 хвилин до золотавого кольору. Остуди на
-              решітці. Смачного!
+              решітці. <br /> <ArticleBoldText>Смачного!</ArticleBoldText>
             </ArticleText>
+            <ArticlesList>
+              <ArticlesItem>
+                <ArticlesWrapper>
+                  <ArticlesIcon />
+                  <ArticlesText>Попередня стаття</ArticlesText>
+                </ArticlesWrapper>
+                <ArticlesImg />
+                <ArticlesSubtitle>Кращі кондитерські Києва</ArticlesSubtitle>
+              </ArticlesItem>
+              <ArticlesItem>
+                <ArticlesWrapper>
+                  <ArticlesText>Наступна стаття</ArticlesText>
+                  <ArticlesIcon src={ArrowRight} />
+                </ArticlesWrapper>
+                <ArticlesImg src={Article2} />
+                <ArticlesSubtitle>Рецепти шоколаду без цукру</ArticlesSubtitle>
+              </ArticlesItem>
+            </ArticlesList>
           </ArticleBlock>
         </Container>
       </Article>

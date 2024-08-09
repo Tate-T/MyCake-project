@@ -6,7 +6,7 @@ import Login from "../../imgs/login.svg";
 import Position from "../../imgs/position.svg";
 import styled from "styled-components";
 // import Articles from "../Articles.jsx";
-// import GoodsPage from "../Goods/GoodsPage";
+// import {GoodsPage} from "../Goods/GoodsPage.jsx";
 // import ConfectionerProducts from "../ConfectionerProducts/ConfectionerProducts.jsx";
 // !hero imgs
 import heroProductImg1 from "../../imgs/hero-products/hero-cake-1.jpg";
@@ -403,6 +403,7 @@ const MoreClientsBtn = styled.button`
 `;
 
 export const Main = () => {
+
   return (
     <>
       <Header>
@@ -829,9 +830,12 @@ export const Main = () => {
       </Container>
 
       <Container>
-        {" "}
         <Footerr></Footerr>
       </Container>
+      <Container><ListTopPip></ListTopPip></Container>
+      <Container><ListState></ListState></Container>
+
+      <Container>  <Footerr></Footerr></Container>
     </>
   );
 };
