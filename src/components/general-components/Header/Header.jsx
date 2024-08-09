@@ -100,4 +100,15 @@ const HeaderWrapper = styled.div`
     );
   };
   ;
+          <HeaderBlock>
+            <ChatIcon />
+            <LoginIcon />
+            Увійти
+          </HeaderBlock>
+        </HeaderWrapper>
+      </Container>
+    </Header>
+  );
+};
 
+export default Header;

@@ -822,13 +822,20 @@ export const Main = () => {
           </MoreClientsBtn>
         </Container>
       </MoreClients>
+      <Container>
+        <ListTopPip></ListTopPip>
+      </Container>
+      <Container>
+        <ListState></ListState>
+      </Container>
+
+      <Container>
+        <Footerr></Footerr>
+      </Container>
       <Container><ListTopPip></ListTopPip></Container>
       <Container><ListState></ListState></Container>
 
       <Container>  <Footerr></Footerr></Container>
-
-
     </>
   );
 };
-
