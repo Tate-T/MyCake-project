@@ -403,7 +403,6 @@ const MoreClientsBtn = styled.button`
 `;
 
 export const Main = () => {
-
   return (
     <>
       <Header>
@@ -832,10 +831,17 @@ export const Main = () => {
       <Container>
         <Footerr></Footerr>
       </Container>
-      <Container><ListTopPip></ListTopPip></Container>
-      <Container><ListState></ListState></Container>
+      <Container>
+        <ListTopPip></ListTopPip>
+      </Container>
+      <Container>
+        <ListState></ListState>
+      </Container>
 
-      <Container>  <Footerr></Footerr></Container>
+      <Container>
+        {" "}
+        <Footerr></Footerr>
+      </Container>
     </>
   );
 };
