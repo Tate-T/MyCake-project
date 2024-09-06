@@ -10,6 +10,8 @@ import leftArrow from "../../svg/leftArrow.svg";
 import rightArrow from "../../svg/rihtAroow.svg";
 import Footerr from "../../components/general-components/Footer/Footer.jsx";
 import Header from "../../components/general-components/Header/Header.jsx";
+import React, {Component} from "react";
+import BidData from "../../components/general-components/BidData/BidData.jsx";
 
 const NavCont = styled.div`
     display: flex;
@@ -194,6 +196,10 @@ const Products = styled.ul`
     display: flex;
     flex-wrap: wrap;
     gap: 20px 10px;
+    button{
+        background-color: transparent;
+        border: 0;
+    }
     li{
         border-radius: 5px;
         box-shadow: 0px 2px 5px 0px rgba(67, 96, 124, 0.15);
@@ -313,14 +319,19 @@ const Pages = styled.div`
 
 
 
-const ConfectionerProducts = () => 
-<>
-    <Header />  
-    <section>
-        <Container>
-            <Searchbar placeholder="Шоколадний торт з квітами" />
-            <NavCont>
-                <Navigation>
+class ConfectionerProducts extends Component{ 
+    state = {
+        showModal: false
+    }
+    render(){
+        return <>
+            {this.state.showModal && <BidData productName="Торт “Червоний оксамит”" time="21.12.2020 13:42" nameAndSurname="Анна Василенко" mobilePhone="+56 085 345 76 34" Weight="2" filling="Шоколадний бісквіт з крем-чізом, горіховим праліне і велюровим покриттям" additionalServices={["Прикраси з мастики", "Живі квіти"]} additionalWish="Хочу торт на 3 яруси з фігурками котиків, що цілуються зверху. Торт має бути трохи солодкий, трохи кислий, дуже смачний і великий" isCall={true} closeModal={() => this.setState(prevState => ({showModal: false}))} />}
+            <Header />  
+            <section>
+                <Container>
+                    <Searchbar placeholder="Шоколадний торт з квітами" />
+                    <NavCont>
+                        <Navigation>
                 <ConfectionerList>
                     <li>
                         <button>
@@ -408,85 +419,89 @@ const ConfectionerProducts = () =>
                         </Themes>
                     </li>
                 </Filters>
-                </Navigation>
-                <ProductsPart>
-                    <ConfectionerTitle>Інна Пономаренко</ConfectionerTitle>
-                    <Types>
-                        <li>
-                            <button activeType="0"><div></div>Капкейки</button>
-                        </li>
-                        <li>
-                            <button activeType="1"><div></div>Торти</button>
-                        </li>
-                        <li>
-                            <button activeType="0"><div></div>Кейк-попси</button>
-                        </li>
-                        <li>
-                            <button activeType="0"><div></div>Макаруни</button>
-                        </li>
-                        <li>
-                            <button activeType="0"><div></div>Печиво</button>
-                        </li>
-                        <li>
-                            <button activeType="0"><div></div>Цукерки</button>
-                        </li>
-                    </Types>
-                    <Products>
-                        {confectionerProducts.map(confectionerProduct => <li key={confectionerProduct.id}>
-                            <img src={confectionerProduct.photo} alt={confectionerProduct.name} />
-                            <h4>{confectionerProduct.price} грн</h4>
-                            <p>{confectionerProduct.name}</p>
-                            <span>{confectionerProduct.variants} варіанти начинок</span>
-                        </li>)}
-                    </Products>
-                    <Loadmore>
-                        <img src={loadmore} />
-                        Більше смаколиків
-                    </Loadmore>
-                    <Pages>
-                        <button>
-                            <img src={leftArrow} />
-                        </button>
-                        <ul>
-                            <li>
+                        </Navigation>
+                        <ProductsPart>
+                            <ConfectionerTitle>Інна Пономаренко</ConfectionerTitle>
+                            <Types>
+                                <li>
+                                    <button activeType="0"><div></div>Капкейки</button>
+                                </li>
+                                <li>
+                                    <button activeType="1"><div></div>Торти</button>
+                                </li>
+                                <li>
+                                    <button activeType="0"><div></div>Кейк-попси</button>
+                                </li>
+                                <li>
+                                    <button activeType="0"><div></div>Макаруни</button>
+                                </li>
+                                <li>
+                                    <button activeType="0"><div></div>Печиво</button>
+                                </li>
+                                <li>
+                                    <button activeType="0"><div></div>Цукерки</button>
+                                </li>
+                            </Types>
+                            <Products>
+                                {confectionerProducts.map(confectionerProduct => <li key={confectionerProduct.id}>
+                                    <button onClick={() => this.setState(prevState => ({showModal: true}))}>
+                                        <img src={confectionerProduct.photo} alt={confectionerProduct.name} />
+                                        <h4>{confectionerProduct.price} грн</h4>
+                                        <p>{confectionerProduct.name}</p>
+                                        <span>{confectionerProduct.variants} варіанти начинок</span>
+                                    </button>
+                                </li>)}
+                            </Products>
+                            <Loadmore>
+                                <img src={loadmore} />
+                                Більше смаколиків
+                            </Loadmore>
+                            <Pages>
                                 <button>
-                                    1
+                                    <img src={leftArrow} />
                                 </button>
-                            </li>
-                            <li>
+                                <ul>
+                                    <li>
+                                        <button>
+                                            1
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button>
+                                            2
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button activePage="1">
+                                            3
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button>
+                                            4
+                                        </button>
+                                    </li>
+                                    <li morePages="1">
+                                        ...
+                                    </li>
+                                    <li>
+                                        <button>
+                                            15
+                                        </button>
+                                    </li>
+                                </ul>
                                 <button>
-                                    2
+                                    <img src={rightArrow} />
                                 </button>
-                            </li>
-                            <li>
-                                <button activePage="1">
-                                    3
-                                </button>
-                            </li>
-                            <li>
-                                <button>
-                                    4
-                                </button>
-                            </li>
-                            <li morePages="1">
-                                ...
-                            </li>
-                            <li>
-                                <button>
-                                    15
-                                </button>
-                            </li>
-                        </ul>
-                        <button>
-                            <img src={rightArrow} />
-                        </button>
-                    </Pages>
-                </ProductsPart>
-            </NavCont>
-            <ListTopPip></ListTopPip>
-            <ListState></ListState>
-        </Container>
-    </section>
-    <Footerr />    
-</>
+                            </Pages>
+                        </ProductsPart>
+                    </NavCont>
+                    <ListTopPip></ListTopPip>
+                    <ListState></ListState>
+                </Container>
+            </section>
+            <Footerr />    
+        </>
+    }
+}
 export default ConfectionerProducts;
