@@ -99,5 +99,16 @@ const HeaderWrapper = styled.div`
       </Header>
     );
   };
+  ;
+          <HeaderBlock>
+            <ChatIcon />
+            <LoginIcon />
+            Увійти
+          </HeaderBlock>
+        </HeaderWrapper>
+      </Container>
+    </Header>
+  );
+};
 
 export default Header;
