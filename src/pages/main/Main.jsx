@@ -43,7 +43,7 @@ import Footerr from "../../components/general-components/Footer/Footer";
 import ListState from "../../components/general-components/upFooterListState/ListState";
 import ListTopPip from "../../components/general-components/upUpFooterListBestCondeters/ListBestCoditers";
 //! header
-import shablonModal from "../../components/shablonForm/shablonForm"
+// import shablonModal from "../../components/shablonForm/shablonForm"
 
 const LocationBtn = styled.button`
   border-radius: 36px;
@@ -404,7 +404,7 @@ const MoreClientsBtn = styled.button`
   margin-right: auto;
 `;
 
-export const Main = () => {
+export const Main = ({obj}) => {
 
   return (
     <>
@@ -431,7 +431,7 @@ export const Main = () => {
             <HeaderBlock>
               <ChatIcon />
               <LoginIcon />
-              Main.jsx
+              <button style={{backgroundColor: "transparent", fontFamily: "Verdana"}} onClick={ () => { obj.setState({ loginModal: true })} }>Увійти</button>
             </HeaderBlock>
           </HeaderWrapper>
         </Container>

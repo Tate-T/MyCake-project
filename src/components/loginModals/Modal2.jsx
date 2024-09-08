@@ -175,8 +175,8 @@ export default function Modal2({ check, obj }) {
                         <li><img src={facebook} alt="facebook" />Facebook</li>
                         <li><img src={google} alt="google" />Google</li>
                     </ul>
-                    <LowerBar inlineStyle={{marginTop: "10px"}} text="У мене немає акаунту, треба зареєструватися" handleOnClick={() => {
-                        obj.setState({ loginModal: true, secondModal: "" });
+                    <LowerBar inlineStyle={{marginTop: "10px"}} text="Я вже маю акаунт, хочу просто увійти" handleOnClick={() => {
+                        obj.setState({ secondModal: "login" });
                     }} />
                 </SocialsLogin>
             </Modal>

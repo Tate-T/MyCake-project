@@ -222,7 +222,7 @@ background: var(--White, #FFF);
 `;
 
 
-export const Confecioners = ({obj}) => {
+export const Confecioners = () => {
     return (
         <>
             <Header>
@@ -248,9 +248,7 @@ export const Confecioners = ({obj}) => {
                         <HeaderBlock>
                             <ChatIcon />
                             <LoginIcon />
-                            <button style={{backgroundColor: "transparent", fontFamily: "Verdana"}} onClick={ () => {
-                              obj.setState({ loginModal: true });
-                            } }>Увійти</button>
+                            Увійти
                         </HeaderBlock>
                     </HeaderWrapper>
                 </Container>
