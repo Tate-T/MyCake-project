@@ -43,6 +43,8 @@ import Footerr from "../../components/general-components/Footer/Footer";
 import ListState from "../../components/general-components/upFooterListState/ListState";
 import ListTopPip from "../../components/general-components/upUpFooterListBestCondeters/ListBestCoditers";
 //! header
+import shablonModal from "../../components/shablonForm/shablonForm"
+
 const LocationBtn = styled.button`
   border-radius: 36px;
   background-color: rgb(255, 242, 242);
@@ -437,6 +439,7 @@ export const Main = () => {
       {/* <Articles></Articles> */}
       {/* <ConfectionerProducts></ConfectionerProducts> */}
       <Hero>
+        {/* <shablonModal></shablonModal>     */}
         <Container>
           <HeroFlexBox>
             <div>
@@ -836,6 +839,7 @@ export const Main = () => {
       <Container><ListState></ListState></Container>
 
       <Container>  <Footerr></Footerr></Container>
+
     </>
   );
 };

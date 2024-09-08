@@ -1,9 +1,8 @@
 import { Component } from "react";
-import { Confecioners } from "./pages/Confecioners/Confecioners";
 import Modal1 from "./components/loginModals/Modal1";
 import Modal2 from "./components/loginModals/Modal2";
 import Modal3 from "./components/loginModals/Modal3";
-// import { Main } from "./pages/main/Main";
+import { Main } from "./pages/main/Main";
 
 class App extends Component {
   state = {
@@ -13,7 +12,7 @@ class App extends Component {
   }
   render() {
     return <>
-      <Confecioners obj={this}></Confecioners>
+      <Main />
       {this.state.loginModal ? <Modal1 obj={this} /> : <></>}
       {this.state.secondModal === "login" ? <Modal2 obj={this} check="login" /> : <></>}
       {this.state.secondModal.includes("register") ? <Modal2 obj={this} check={this.state.secondModal} /> : <></>}
