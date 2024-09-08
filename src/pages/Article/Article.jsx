@@ -217,7 +217,7 @@ export const ArticlePage = () => {
             <HeaderBlock>
               <ChatIcon />
               <LoginIcon />
-              Увійти
+              Article.jsx
             </HeaderBlock>
           </HeaderWrapper>
         </Container>
