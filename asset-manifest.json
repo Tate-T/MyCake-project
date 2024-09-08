@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/my-cake-project/static/js/main.cf1e95c7.js",
+    "main.js": "/my-cake-project/static/js/main.d6447131.js",
     "static/media/hero-additional-3.png": "/my-cake-project/static/media/hero-additional-3.3903c3ab3d838afaf1a6.png",
     "static/media/cupcake-2.jpg": "/my-cake-project/static/media/cupcake-2.69b542c70e8c5db15dcb.jpg",
     "static/media/cupcake-4.jpg": "/my-cake-project/static/media/cupcake-4.0b184f4f2053c83ce028.jpg",
@@ -41,9 +41,9 @@
     "static/media/close.svg": "/my-cake-project/static/media/close.fe4a3204352cd2523e3664100d4ca17d.svg",
     "static/media/right1.svg": "/my-cake-project/static/media/right1.2fc4112848009f8de8bc70279710b093.svg",
     "static/media/right2.svg": "/my-cake-project/static/media/right2.5ba9b1e604583e2dea92a9c7d9e8e9f7.svg",
-    "main.cf1e95c7.js.map": "/my-cake-project/static/js/main.cf1e95c7.js.map"
+    "main.d6447131.js.map": "/my-cake-project/static/js/main.d6447131.js.map"
   },
   "entrypoints": [
-    "static/js/main.cf1e95c7.js"
+    "static/js/main.d6447131.js"
   ]
 }
