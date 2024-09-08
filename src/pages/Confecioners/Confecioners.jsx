@@ -70,47 +70,47 @@ const HeaderWrapper = styled.div`
   flex-wrap: nowrap;
   align-items: center;
 `;
-const Article = styled.section`
-  padding-top: 40px;
-  padding-bottom: 111px;
-`;
+// const Article = styled.section`
+//   padding-top: 40px;
+//   padding-bottom: 111px;
+// `;
 
-const ArticleInput = styled.input`
-  border: 1px solid rgb(223, 223, 223);
-  border-radius: 5px 0px 0px 5px;
-  padding: 10px 20px 10px 20px;
-`;
+// const ArticleInput = styled.input`
+//   border: 1px solid rgb(223, 223, 223);
+//   border-radius: 5px 0px 0px 5px;
+//   padding: 10px 20px 10px 20px;
+// `;
 
-const ArticleBtn = styled.button`
-  border: 1px solid rgb(253, 173, 109);
-  border-radius: 0px 5px 5px 0px;
-  background-color: rgb(253, 173, 109);
-`;
+// const ArticleBtn = styled.button`
+//   border: 1px solid rgb(253, 173, 109);
+//   border-radius: 0px 5px 5px 0px;
+//   background-color: rgb(253, 173, 109);
+// `;
 
-const ArticleWrapper = styled.div`
-  width: 1000px;
-`;
-const ArticleBanner = styled.img`
-  overflow: hidden;
-  border-radius: 10px;
-  width: 100%;
-`;
+// const ArticleWrapper = styled.div`
+//   width: 1000px;
+// `;
+// const ArticleBanner = styled.img`
+//   overflow: hidden;
+//   border-radius: 10px;
+//   width: 100%;
+// `;
 
-const ArticleTitle = styled.img`
-  color: rgb(67, 96, 124);
-  font-size: 35px;
-  font-weight: 400;
-  line-height: 40px;
-`;
-const ArticleBlock = styled.div`
-  gap: 30px;
-`;
-const ArticleText = styled.p`
-  color: rgb(67, 96, 124);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 24px;
-`;
+// const ArticleTitle = styled.img`
+//   color: rgb(67, 96, 124);
+//   font-size: 35px;
+//   font-weight: 400;
+//   line-height: 40px;
+// `;
+// const ArticleBlock = styled.div`
+//   gap: 30px;
+// `;
+// const ArticleText = styled.p`
+//   color: rgb(67, 96, 124);
+//   font-size: 14px;
+//   font-weight: 400;
+//   line-height: 24px;
+// `;
 
 const HeroSearchInputBox = styled.div`
   display: flex;
@@ -222,7 +222,7 @@ background: var(--White, #FFF);
 `;
 
 
-export const Confecioners = () => {
+export const Confecioners = ({obj}) => {
     return (
         <>
             <Header>
@@ -248,7 +248,9 @@ export const Confecioners = () => {
                         <HeaderBlock>
                             <ChatIcon />
                             <LoginIcon />
-                            Увійти
+                            <button style={{backgroundColor: "transparent", fontFamily: "Verdana"}} onClick={ () => {
+                              obj.setState({ loginModal: true });
+                            } }>Увійти</button>
                         </HeaderBlock>
                     </HeaderWrapper>
                 </Container>

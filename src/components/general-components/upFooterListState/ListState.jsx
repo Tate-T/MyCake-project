@@ -11,7 +11,7 @@ const GlawBox = styled.div`
 
 const Ul = styled.ul`
   display: flex;
-  line-style: none;
+  list-style: none;
   gap: 18px;
 `;
 const BoxesFlex = styled.div`
@@ -19,7 +19,7 @@ const BoxesFlex = styled.div`
   align-items: center;
   margin-bottom: 20px;
 `;
-const Boxes = styled.div``;
+
 const BoxesFlexInfo = styled.div`
   // position: absolute;
   // right: 205px;

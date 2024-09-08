@@ -37,7 +37,7 @@ import { Cakes } from "../../components/main-page/Cakes/Cakes-styled";
 import { Cupcakes } from "../../components/main-page/Cupcakes/Cupcakes.styled";
 import { MoreClients } from "../../components/main-page/More-clients/MoreClients.styled";
 import { List } from "../../components/general-components/List/List.styled";
-import Btn from "../../components/general-components/Btn/Btn";
+// import Btn from "../../components/general-components/Btn/Btn";
 
 import Footerr from "../../components/general-components/Footer/Footer";
 import ListState from "../../components/general-components/upFooterListState/ListState";
@@ -429,7 +429,7 @@ export const Main = () => {
             <HeaderBlock>
               <ChatIcon />
               <LoginIcon />
-              Увійти
+              Main.jsx
             </HeaderBlock>
           </HeaderWrapper>
         </Container>
