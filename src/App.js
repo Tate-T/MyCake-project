@@ -14,8 +14,8 @@ class App extends Component {
   render() {
     return <>
 
-      <ModalResp/>
-      {/* <Main /> */}
+      {/* <ModalResp/> */}
+      <Main />
       {/* {this.state.loginModal ? <Modal1 obj={this} /> : <></>}
       {this.state.secondModal === "login" ? <Modal2 obj={this} check="login" /> : <></>}
       {this.state.secondModal.includes("register") ? <Modal2 obj={this} check={this.state.secondModal} /> : <></>}
