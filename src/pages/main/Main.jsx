@@ -26,6 +26,7 @@ import cakeImg4 from '../../imgs/cakes/cake-4.jpg'
 import cakeImg5 from '../../imgs/cakes/cake-5.jpg'
 
 // !cupcakes imgs
+
 import cupcakeImg1 from '../../imgs/cupcakes/cupcake-1.jpg'
 import cupcakeImg2 from '../../imgs/cupcakes/cupcake-2.jpg'
 import cupcakeImg3 from '../../imgs/cupcakes/cupcake-3.jpg'
@@ -44,6 +45,26 @@ import ListState from '../../components/general-components/upFooterListState/Lis
 import ListTopPip from '../../components/general-components/upUpFooterListBestCondeters/ListBestCoditers'
 //! header
 import shablonModal from '../../components/shablonForm/ShablonForm'
+=======
+import cupcakeImg1 from "../../imgs/cupcakes/cupcake-1.jpg";
+import cupcakeImg2 from "../../imgs/cupcakes/cupcake-2.jpg";
+import cupcakeImg3 from "../../imgs/cupcakes/cupcake-3.jpg";
+import cupcakeImg4 from "../../imgs/cupcakes/cupcake-4.jpg";
+import cupcakeImg5 from "../../imgs/cupcakes/cupcake-5.jpg";
+
+import { Hero } from "../../components/main-page/Hero/Hero.styled";
+import { Cakes } from "../../components/main-page/Cakes/Cakes-styled";
+import { Cupcakes } from "../../components/main-page/Cupcakes/Cupcakes.styled";
+import { MoreClients } from "../../components/main-page/More-clients/MoreClients.styled";
+import { List } from "../../components/general-components/List/List.styled";
+// import Btn from "../../components/general-components/Btn/Btn";
+
+import Footerr from "../../components/general-components/Footer/Footer";
+import ListState from "../../components/general-components/upFooterListState/ListState";
+import ListTopPip from "../../components/general-components/upUpFooterListBestCondeters/ListBestCoditers";
+//! header
+// import shablonModal from "../../components/shablonForm/shablonForm"
+
 
 const LocationBtn = styled.button`
 	border-radius: 36px;
@@ -403,6 +424,7 @@ const MoreClientsBtn = styled.button`
 	margin-left: auto;
 	margin-right: auto;
 `
+
 
 export const Main = () => {
 	return (
@@ -848,3 +870,444 @@ export const Main = () => {
 		</>
 	)
 }
+
+export const Main = ({obj}) => {
+
+  return (
+    <>
+      <Header>
+        <Container>
+          <HeaderWrapper>
+            <Logo>MyCake</Logo>
+            <LocationBtn type="button">
+              <PositionIcon />
+              Вся Україна
+            </LocationBtn>
+            <HeaderList>
+              <li>
+                <HeaderLink>Десерти</HeaderLink>
+              </li>
+              <li>
+                <HeaderLink>Кращі кондитери</HeaderLink>
+              </li>
+              <li>
+                <HeaderLink>Корисні статті</HeaderLink>
+              </li>
+            </HeaderList>
+
+            <HeaderBlock>
+              <ChatIcon />
+              <LoginIcon />
+              <button style={{backgroundColor: "transparent", fontFamily: "Verdana"}} onClick={ () => { obj.setState({ loginModal: true })} }>Увійти</button>
+            </HeaderBlock>
+          </HeaderWrapper>
+        </Container>
+      </Header>
+      {/* <Articles></Articles> */}
+      {/* <ConfectionerProducts></ConfectionerProducts> */}
+      <Hero>
+        {/* <shablonModal></shablonModal>     */}
+        <Container>
+          <HeroFlexBox>
+            <div>
+              <HeroTitle>Пошукаємо щось смачненького?</HeroTitle>
+              <HeroDescription>
+                Ми об’єднали кондитерів з різних міст, щоб необхідні смаколики
+                можна було замовити ще легше
+              </HeroDescription>
+              <HeroSearchInputBox>
+                <HeroSearchInput />
+                <HeroSearchBtn type="button">Шукати</HeroSearchBtn>
+              </HeroSearchInputBox>
+              <HeroPopularSearchList>
+                <HeroPopularSearchItem>
+                  <HeroPopularSearchText>
+                    На день народження
+                  </HeroPopularSearchText>
+                </HeroPopularSearchItem>
+                <HeroPopularSearchItem>
+                  <HeroPopularSearchText>З фруктами</HeroPopularSearchText>
+                </HeroPopularSearchItem>
+                <HeroPopularSearchItem>
+                  <HeroPopularSearchText>Патріотичні</HeroPopularSearchText>
+                </HeroPopularSearchItem>
+                <HeroPopularSearchItem>
+                  <HeroPopularSearchText>Для чоловіків</HeroPopularSearchText>
+                </HeroPopularSearchItem>
+                <HeroPopularSearchItem>
+                  <HeroPopularSearchText>Для весілля</HeroPopularSearchText>
+                </HeroPopularSearchItem>
+                <HeroPopularSearchItem>
+                  <HeroPopularSearchText>Без глютену</HeroPopularSearchText>
+                </HeroPopularSearchItem>
+                <HeroPopularSearchItem>
+                  <HeroPopularSearchText>Веганські</HeroPopularSearchText>
+                </HeroPopularSearchItem>
+                <HeroPopularSearchItem>
+                  <HeroPopularSearchText>Без цукру </HeroPopularSearchText>
+                </HeroPopularSearchItem>
+                <HeroPopularSearchItem>
+                  <HeroPopularSearchText>Для дівчат</HeroPopularSearchText>
+                </HeroPopularSearchItem>
+                <HeroPopularSearchItem>
+                  <HeroPopularSearchText>З квітами</HeroPopularSearchText>
+                </HeroPopularSearchItem>
+                <HeroPopularSearchItem>
+                  <HeroPopularSearchText>
+                    Класичні рецепти
+                  </HeroPopularSearchText>
+                </HeroPopularSearchItem>
+                <HeroOtherVariantsItem>
+                  <p>Інші варіанти</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_5817_8807)">
+                      <path
+                        d="M6.175 7.1582L10 10.9749L13.825 7.1582L15 8.3332L10 13.3332L5 8.3332L6.175 7.1582Z"
+                        fill="#8E4A4E"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_5817_8807">
+                        <rect
+                          width="20"
+                          height="20"
+                          fill="white"
+                          transform="matrix(0 1 -1 0 20 0)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </HeroOtherVariantsItem>
+              </HeroPopularSearchList>
+              <HeroArrowsBox>
+                <CakesArrowBtn type="button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_5811_9696)">
+                      <path
+                        d="M15.4102 16.59L10.8302 12L15.4102 7.41L14.0002 6L8.00016 12L14.0002 18L15.4102 16.59Z"
+                        fill="#43607C"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_5811_9696">
+                        <rect
+                          width="24"
+                          height="24"
+                          fill="white"
+                          transform="matrix(-1 0 0 1 24 0)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </CakesArrowBtn>
+                <CakesArrowBtn type="button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_5811_8201)">
+                      <path
+                        d="M8.58984 16.59L13.1698 12L8.58984 7.41L9.99984 6L15.9998 12L9.99984 18L8.58984 16.59Z"
+                        fill="#43607C"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_5811_8201">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </CakesArrowBtn>
+              </HeroArrowsBox>
+              <HeroProductsList>
+                <li>
+                  <img src={heroProductImg1} alt="cake" />
+                  <h2>Торти</h2>
+                </li>
+                <li>
+                  <img src={heroProductImg2} alt="cake" />
+                  <h2>Цукерки</h2>
+                </li>
+                <li>
+                  <img src={heroProductImg3} alt="cake" />
+                  <h2>Капкейки</h2>
+                </li>
+                <li>
+                  <img src={heroProductImg4} alt="cake" />
+                  <h2>Макаруни</h2>
+                </li>
+                <li>
+                  <img src={heroProductImg5} alt="cake" />
+                  <h2>Печиво</h2>
+                </li>
+              </HeroProductsList>
+            </div>
+            <HeroImgsBox>
+              <div>
+                <HeroAdditionalSmallImg src={heroAdditionalImg1} />
+                <HeroAdditionalSmallImg src={heroAdditionalImg2} />
+              </div>
+              <HeroAdditionalBigImg src={heroAdditionalImg3} />
+            </HeroImgsBox>
+          </HeroFlexBox>
+          {/* <Btn text="Переглянути всі"></Btn> */}
+        </Container>
+      </Hero>
+      <Cakes>
+        <Container>
+          <CakesBox>
+            <CakesTitle>Торти</CakesTitle>
+            <CakesBtnsBox>
+              <CakesBtnSeeAll type="button">Переглянути всі</CakesBtnSeeAll>
+              <CakesArrowBtn type="button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_5811_9696)">
+                    <path
+                      d="M15.4102 16.59L10.8302 12L15.4102 7.41L14.0002 6L8.00016 12L14.0002 18L15.4102 16.59Z"
+                      fill="#43607C"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_5811_9696">
+                      <rect
+                        width="24"
+                        height="24"
+                        fill="white"
+                        transform="matrix(-1 0 0 1 24 0)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </CakesArrowBtn>
+              <CakesArrowBtn type="button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_5811_8201)">
+                    <path
+                      d="M8.58984 16.59L13.1698 12L8.58984 7.41L9.99984 6L15.9998 12L9.99984 18L8.58984 16.59Z"
+                      fill="#43607C"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_5811_8201">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </CakesArrowBtn>
+            </CakesBtnsBox>
+          </CakesBox>
+          <CakesList>
+            <li>
+              <img src={cakeImg1} alt="cake-1" />
+              <CakesCardBox>
+                <CakeCardTitle>520 грн</CakeCardTitle>
+                <CakeCardSubtitle>
+                  Торт “Літнє бажання” з шоколадом та макарунами
+                </CakeCardSubtitle>
+                <CakeCardDescription>4 варіанти начинок</CakeCardDescription>
+              </CakesCardBox>
+            </li>
+            <li>
+              <img src={cakeImg2} alt="cake-2" />
+              <CakesCardBox>
+                <CakeCardTitle>520 грн</CakeCardTitle>
+                <CakeCardSubtitle>
+                  Весільний триярусний торт з фруктами та квітами
+                </CakeCardSubtitle>
+                <CakeCardDescription>4 варіанти начинок</CakeCardDescription>
+              </CakesCardBox>
+            </li>
+            <li>
+              <img src={cakeImg3} alt="cake-3" />
+              <CakesCardBox>
+                <CakeCardTitle>520 грн</CakeCardTitle>
+                <CakeCardSubtitle>Бісквітний торт з ягодами</CakeCardSubtitle>
+                <CakeCardDescription>4 варіанти начинок</CakeCardDescription>
+              </CakesCardBox>
+            </li>
+            <li>
+              <img src={cakeImg4} alt="cake-4" />
+              <CakesCardBox>
+                <CakeCardTitle>520 грн</CakeCardTitle>
+                <CakeCardSubtitle>
+                  Ванільно-карамельний торт з печивом Орео
+                </CakeCardSubtitle>
+                <CakeCardDescription>4 варіанти начинок</CakeCardDescription>
+              </CakesCardBox>
+            </li>
+            <li>
+              <img src={cakeImg5} alt="cake-5" />
+              <CakesCardBox>
+                <CakeCardTitle>520 грн</CakeCardTitle>
+                <CakeCardSubtitle>Торт рожевий з макарунами</CakeCardSubtitle>
+                <CakeCardDescription>4 варіанти начинок</CakeCardDescription>
+              </CakesCardBox>
+            </li>
+          </CakesList>
+        </Container>
+      </Cakes>
+      <Cupcakes>
+        <Container>
+          <CakesBox>
+            <CakesTitle>Капкейки</CakesTitle>
+            <CakesBtnsBox>
+              <CakesBtnSeeAll>Переглянути всі</CakesBtnSeeAll>
+              <CakesArrowBtn>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_5811_9696)">
+                    <path
+                      d="M15.4102 16.59L10.8302 12L15.4102 7.41L14.0002 6L8.00016 12L14.0002 18L15.4102 16.59Z"
+                      fill="#43607C"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_5811_9696">
+                      <rect
+                        width="24"
+                        height="24"
+                        fill="white"
+                        transform="matrix(-1 0 0 1 24 0)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </CakesArrowBtn>
+              <CakesArrowBtn>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_5811_8201)">
+                    <path
+                      d="M8.58984 16.59L13.1698 12L8.58984 7.41L9.99984 6L15.9998 12L9.99984 18L8.58984 16.59Z"
+                      fill="#43607C"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_5811_8201">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </CakesArrowBtn>
+            </CakesBtnsBox>
+          </CakesBox>
+          <CakesList>
+            <li>
+              <img src={cupcakeImg1} alt="cupcake-1" />
+              <CakesCardBox>
+                <CakeCardTitle>520 грн</CakeCardTitle>
+                <CakeCardSubtitle>
+                  Пасхальні капкейки шоколадні та ванільні
+                </CakeCardSubtitle>
+                <CakeCardDescription>4 варіанти начинок</CakeCardDescription>
+              </CakesCardBox>
+            </li>
+            <li>
+              <img src={cupcakeImg2} alt="cupcake-2" />
+              <CakesCardBox>
+                <CakeCardTitle>520 грн</CakeCardTitle>
+                <CakeCardSubtitle>
+                  Оригінальні капкейки з кремом та печивом
+                </CakeCardSubtitle>
+                <CakeCardDescription>4 варіанти начинок</CakeCardDescription>
+              </CakesCardBox>
+            </li>
+            <li>
+              <img src={cupcakeImg3} alt="cupcake-3" />
+              <CakesCardBox>
+                <CakeCardTitle>520 грн</CakeCardTitle>
+                <CakeCardSubtitle>Капкейки з карамеллю 3 шт</CakeCardSubtitle>
+                <CakeCardDescription>4 варіанти начинок</CakeCardDescription>
+              </CakesCardBox>
+            </li>
+            <li>
+              <img src={cupcakeImg4} alt="cupcake-4" />
+              <CakesCardBox>
+                <CakeCardTitle>520 грн</CakeCardTitle>
+                <CakeCardSubtitle>Капкейки з ніжним кремом</CakeCardSubtitle>
+                <CakeCardDescription>4 варіанти начинок</CakeCardDescription>
+              </CakesCardBox>
+            </li>
+            <li>
+              <img src={cupcakeImg5} alt="cupcake-5" />
+              <CakesCardBox>
+                <CakeCardTitle>520 грн</CakeCardTitle>
+                <CakeCardSubtitle>
+                  Чорні капкейки з шоколадом та печивом
+                </CakeCardSubtitle>
+                <CakeCardDescription>4 варіанти начинок</CakeCardDescription>
+              </CakesCardBox>
+            </li>
+          </CakesList>
+        </Container>
+      </Cupcakes>
+      <MoreClients>
+        <Container>
+          <MoreClientsTitle>
+            Обожнюєш свою роботу і хочеш більше клієнтів?
+          </MoreClientsTitle>
+          <MoreClientsDescription>
+            Реєструйся як кондитер, викладай фото своїх смаколиків та отримуй
+            замовлення через MyCake
+          </MoreClientsDescription>
+          <MoreClientsBtn type="button">
+            Зареєструватися як кондитер
+          </MoreClientsBtn>
+        </Container>
+      </MoreClients>
+      <Container>
+        <ListTopPip></ListTopPip>
+      </Container>
+      <Container>
+        <ListState></ListState>
+      </Container>
+
+      <Container>
+        <Footerr></Footerr>
+      </Container>
+      <Container><ListTopPip></ListTopPip></Container>
+      <Container><ListState></ListState></Container>
+
+      <Container>  <Footerr></Footerr></Container>
+
+    </>
+  );
+};
+
