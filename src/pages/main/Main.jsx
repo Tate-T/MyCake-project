@@ -11,21 +11,9 @@ import styled from "styled-components";
 // import {GoodsPage} from "../Goods/GoodsPage.jsx";
 // import ConfectionerProducts from "../ConfectionerProducts/ConfectionerProducts.jsx";
 // !hero imgs
-import heroProductImg1 from "../../imgs/hero-products/hero-cake-1.jpg";
-import heroProductImg2 from "../../imgs/hero-products/hero-cake-2.jpg";
-import heroProductImg3 from "../../imgs/hero-products/hero-cake-3.jpg";
-import heroProductImg4 from "../../imgs/hero-products/hero-cake-4.jpg";
-import heroProductImg5 from "../../imgs/hero-products/hero-cake-5.jpg";
 import heroAdditionalImg1 from "../../imgs/hero-additional/hero-additional-1.png";
 import heroAdditionalImg2 from "../../imgs/hero-additional/hero-additional-2.png";
 import heroAdditionalImg3 from "../../imgs/hero-additional/hero-additional-3.png";
-
-// !cakes imgs
-import cakeImg1 from "../../imgs/cakes/cake-1.jpg";
-import cakeImg2 from "../../imgs/cakes/cake-2.jpg";
-import cakeImg3 from "../../imgs/cakes/cake-3.jpg";
-import cakeImg4 from "../../imgs/cakes/cake-4.jpg";
-import cakeImg5 from "../../imgs/cakes/cake-5.jpg";
 
 // !cupcakes imgs
 import cupcakeImg1 from "../../imgs/cupcakes/cupcake-1.jpg";
@@ -237,6 +225,10 @@ const HeroProductsList = styled.ul`
     justify-content: center;
     flex-direction: column;
 
+    img {
+      max-width: 153px;
+    }
+
     h2 {
       color: ${(props) => props.theme.colors.textColor};
       font-family: Verdana;
@@ -329,9 +321,9 @@ const CakesList = styled.ul`
   gap: 18px;
   margin-top: 20px;
 
-  /* li {
-    height: 424px;
-  } */
+  li {
+    max-width: 280px;
+  }
 `;
 
 Senya, [12.10.2024 12:01]
@@ -414,6 +406,11 @@ export const Main = ({ func }) => {
   const [varietyOfProducts, setVarietyOfProducts] = useState([]);
   const [varietyOfProductsIsLoading, setVarietyOfProductsIsLoading] =
     useState(false);
+<<<<<<< Updated upstream
+=======
+  const [cakes, setCakes] = useState([]);
+  const [cakesIsLoading, setCakesIsLoading] = useState(false);
+>>>>>>> Stashed changes
 
   useEffect(() => {
     setTypesOfCakesIsLoading(true);
@@ -441,6 +438,23 @@ export const Main = ({ func }) => {
       .catch((err) => console.log(err))
       .finally(() => {
         setVarietyOfProductsIsLoading(false);
+<<<<<<< Updated upstream
+=======
+      });
+  }, []);
+
+  useEffect(() => {
+    setCakesIsLoading(true);
+    fetch("http://localhost:3000/cakes")
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data)
+        setCakes(data);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setCakesIsLoading(false);
+>>>>>>> Stashed changes
       });
   }, []);
 
@@ -475,9 +489,15 @@ Senya, [12.10.2024 12:01]
                   backgroundColor: "transparent",
                   fontFamily: "Verdana",
                 }}
+<<<<<<< Updated upstream
                 onClick={() => {
                   func(true );
                 }}
+=======
+                // onClick={() => {
+                //   obj.setState({ loginModal: true });
+                // }}
+>>>>>>> Stashed changes
               >
                 Увійти
               </button>
@@ -503,7 +523,11 @@ Senya, [12.10.2024 12:01]
               </HeroSearchInputBox>
               <HeroPopularSearchList>
                 {typesOfCakesisLoading === true
+<<<<<<< Updated upstream
                   ? console.log("downloading")
+=======
+                  ? null
+>>>>>>> Stashed changes
                   : typesOfCakes.map((type) => (
                       <HeroPopularSearchItem key={type.id}>
                         <HeroPopularSearchText>
@@ -592,7 +616,11 @@ d="M8.58984 16.59L13.1698 12L8.58984 7.41L9.99984 6L15.9998 12L9.99984 18L8.5898
               </HeroArrowsBox>
               <HeroProductsList>
                 {varietyOfProductsIsLoading === true
+<<<<<<< Updated upstream
                   ? console.log("downloading")
+=======
+                  ? null
+>>>>>>> Stashed changes
                   : varietyOfProducts.map((product) => (
                       <li key={product.id}>
                         <img src={product.src} alt={product.name} />
@@ -688,10 +716,29 @@ d="M8.58984 16.59L13.1698 12L8.58984 7.41L9.99984 6L15.9998 12L9.99984 18L8.5898
             </CakesBtnsBox>
           </CakesBox>
           <CakesList>
+<<<<<<< Updated upstream
             <li>
 
 Senya, [12.10.2024 12:01]
 <img src={cakeImg1} alt="cake-1" />
+=======
+            {cakesIsLoading === true
+              ? null
+              : cakes.map((cake) => (
+                  <li>
+                    <img src={cake.src} alt={cake.name} />
+                    <CakesCardBox>
+                      <CakeCardTitle>{cake.price} грн</CakeCardTitle>
+                      <CakeCardSubtitle>{cake.name}</CakeCardSubtitle>
+                      <CakeCardDescription>
+                        {cake.quantityOfFillings} варіанти начинок
+                      </CakeCardDescription>
+                    </CakesCardBox>
+                  </li>
+                ))}
+            {/* <li>
+              <img src={cakeImg1} alt="cake-1" />
+>>>>>>> Stashed changes
               <CakesCardBox>
                 <CakeCardTitle>520 грн</CakeCardTitle>
                 <CakeCardSubtitle>
@@ -735,7 +782,7 @@ Senya, [12.10.2024 12:01]
                 <CakeCardSubtitle>Торт рожевий з макарунами</CakeCardSubtitle>
                 <CakeCardDescription>4 варіанти начинок</CakeCardDescription>
               </CakesCardBox>
-            </li>
+            </li> */}
           </CakesList>
         </Container>
       </Cakes>
