@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Header } from "../../components/general-components/Header/Header.styled";
 import { Container } from "../../components/general-components/Container/Container.styled";
 import { Logo } from "../../components/general-components/Logo/Logo.styled";
@@ -404,7 +405,24 @@ const MoreClientsBtn = styled.button`
   margin-right: auto;
 `;
 
-export const Main = ({obj}) => {
+export const Main = ({ obj }) => {
+  const [typesOfCakes, setTypesOfCakes] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch("http://localhost:3000/typesOfCakes")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setTypesOfCakes(data);
+        console.log(typesOfCakes);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
 
   return (
     <>
@@ -431,7 +449,17 @@ export const Main = ({obj}) => {
             <HeaderBlock>
               <ChatIcon />
               <LoginIcon />
-              <button style={{backgroundColor: "transparent", fontFamily: "Verdana"}} onClick={ () => { obj.setState({ loginModal: true })} }>Увійти</button>
+              <button
+                style={{
+                  backgroundColor: "transparent",
+                  fontFamily: "Verdana",
+                }}
+                onClick={() => {
+                  obj.setState({ loginModal: true });
+                }}
+              >
+                Увійти
+              </button>
             </HeaderBlock>
           </HeaderWrapper>
         </Container>
@@ -453,7 +481,12 @@ export const Main = ({obj}) => {
                 <HeroSearchBtn type="button">Шукати</HeroSearchBtn>
               </HeroSearchInputBox>
               <HeroPopularSearchList>
-                <HeroPopularSearchItem>
+                {/* {typesOfCakes.map((type) => (
+                  <HeroPopularSearchItem key={type.id}>
+                    <HeroPopularSearchText>{type.type}</HeroPopularSearchText>
+                  </HeroPopularSearchItem>
+                ))} */}
+                {/* <HeroPopularSearchItem>
                   <HeroPopularSearchText>
                     На день народження
                   </HeroPopularSearchText>
@@ -489,7 +522,16 @@ export const Main = ({obj}) => {
                   <HeroPopularSearchText>
                     Класичні рецепти
                   </HeroPopularSearchText>
-                </HeroPopularSearchItem>
+                </HeroPopularSearchItem> */}
+                {isLoading === true
+                  ? console.log("downloading")
+                  : typesOfCakes.map((type) => (
+                      <HeroPopularSearchItem key={type.id}>
+                        <HeroPopularSearchText>
+                          {type.type}
+                        </HeroPopularSearchText>
+                      </HeroPopularSearchItem>
+                    ))}
                 <HeroOtherVariantsItem>
                   <p>Інші варіанти</p>
                   <svg
@@ -831,15 +873,9 @@ export const Main = ({obj}) => {
       <Container>
         <ListState></ListState>
       </Container>
-
       <Container>
         <Footerr></Footerr>
       </Container>
-      <Container><ListTopPip></ListTopPip></Container>
-      <Container><ListState></ListState></Container>
-
-      <Container>  <Footerr></Footerr></Container>
-
     </>
   );
 };
