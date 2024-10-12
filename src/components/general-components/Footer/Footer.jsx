@@ -3,6 +3,7 @@ import location from "../../../svg/location_pin.svg";
 import yut from "../../../svg/Youtube_black.svg";
 import inst from "../../../svg/Instagram.svg";
 import { Container } from "../Container/Container.styled";
+
 const Foooter = styled.footer`
   background: var(--Black, #011936);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
