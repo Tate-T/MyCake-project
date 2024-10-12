@@ -123,11 +123,12 @@ const SocialsLogin = styled.div`
 
 
 export default function Modal2({ check, obj }) {
+    const [setLoginModal, setSecondModal, setVerificationModal] = obj;
     if (check === "login") {
         return <Overlay>
             <Modal>
                 <TopBar object={obj} text="Вхід" />
-                <Form onSubmit={(e) => {e.preventDefault(); obj.setState({verificationModal: {hidden: true, type: true}, secondModal: ""})}}>
+                <Form onSubmit={(e) => { e.preventDefault(); setVerificationModal({ hidden: true, type: true }); setSecondModal("")}}>
                     <h5>Номер телефону</h5>
                     <p>На вказаний номер вам прийде СМС-повідомлення з кодом</p>
                     <div>
@@ -143,7 +144,7 @@ export default function Modal2({ check, obj }) {
                         <li><img src={google} alt="google" />Google</li>
                     </ul>
                     <LowerBar text="У мене немає акаунту, треба зареєструватися" handleOnClick={() => {
-                        obj.setState({ loginModal: true, secondModal: "" });
+                        setLoginModal(true); setSecondModal("");
                     }} />
                 </SocialsLogin>
             </Modal>
@@ -153,7 +154,7 @@ export default function Modal2({ check, obj }) {
         return <Overlay>
             <Modal>
                 <TopBar object={obj} text="Реєстрація" />
-                <Form onSubmit={(e) => {e.preventDefault();obj.setState({verificationModal: {hidden: true, type: false}, secondModal: ""})}}>
+                <Form onSubmit={(e) => { e.preventDefault(); setVerificationModal({ hidden: true, type: false }); setSecondModal("")}}>
                     <ul>
                         <li>
                             <h5>{check.includes("Customer") ? "Ім’я та прізвище" : "Ім’я або назва компанії"}</h5>
@@ -176,7 +177,7 @@ export default function Modal2({ check, obj }) {
                         <li><img src={google} alt="google" />Google</li>
                     </ul>
                     <LowerBar inlineStyle={{marginTop: "10px"}} text="Я вже маю акаунт, хочу просто увійти" handleOnClick={() => {
-                        obj.setState({ secondModal: "login" });
+                        setSecondModal("login");
                     }} />
                 </SocialsLogin>
             </Modal>

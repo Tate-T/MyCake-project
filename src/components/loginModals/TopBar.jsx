@@ -21,10 +21,11 @@ const TopBarC = styled.div`
 `;
 
 export default function TopBar({ text, object }) {
+  const [setLoginModal, setSecondModal, setVerificationModal] = object;
     return (
       <TopBarC>
         <h3>{text}</h3>
-        <img src={close} alt="close" onClick={() => {object.setState({loginModal: false, secondModal: "", verificationModal: {hidden: false}})}}/>
+        <img src={close} alt="close" onClick={() => { setLoginModal(false); setSecondModal(""); setVerificationModal({hidden: false})}}/>
       </TopBarC>
     );
 }
