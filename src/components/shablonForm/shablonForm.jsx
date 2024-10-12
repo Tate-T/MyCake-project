@@ -3,6 +3,8 @@ import svg from './xrestec.svg'
 import stilka from './strilka.svg'
 import pen from './mode_edit.svg'
 import styled from 'styled-components'
+import { useState } from "react";
+import AplicationSucc from './Aplication'
 const SvgLocation = styled.img`
 	width: 30px;
 	height: 30px;
@@ -219,13 +221,15 @@ const FeedbackBackdrop = styled.div`
   bottom: 0;
   z-index: 11;
 `;
-class shablonModal extends Component {
-	state = {
-		hiden: true,
-	}
-
-	closeModal = () => {
-		this.setState({ hiden: true })
+const ShablonModal = () => {
+	// state = {
+	// 	hiden: false,
+	// }
+const [hidden , setHidden] = useState(false);
+const [aphidden , setAphidden] = useState(false);
+const	closeModal = () => {
+		// this.setState({ hiden: true })
+		setHidden(true)
 		// console.log(this.state.hiden)
         // console.log(document.getElementById("name").value)
         // console.log(document.getElementById("num").value)
@@ -233,77 +237,75 @@ class shablonModal extends Component {
         // console.log(document.getElementById("nachinka").value)
         // console.log(document.getElementById("addbobam").value)
 	}
-	openModal = () => {
-		this.setState({ hiden: false })
+	const	openModal = () => {
+		// this.setState({ hiden: false })
+		setHidden(false)
 		// console.log(this.state.hiden)
 	}
 
-	render() {
-		const { hiden } = this.state;
-		return (
-            hiden === false && (
-				<FeedbackBackdrop>
-			<GlawBox >
-                <BtnCloseModal onClick={() => this.closeModal()}>
-                
-                <SvgLocation href={svg} alt="awd" />
-                </BtnCloseModal>
-				
-				<TitleName>Торт “Червоний оксамит”</TitleName>
-				<BoxNum>
-					<ItemBoxNum>
-						<TextNumName>Ім’я та прізвище</TextNumName>
-						<InputNameNum id="name" placeholder="name" />
-					</ItemBoxNum>
-					<ItemBoxNum>
-						<TextNumName>Номер телефону</TextNumName>
-						<InputNameNum id="num" placeholder="number" />
-					</ItemBoxNum>
-				</BoxNum>
-				<Linia></Linia>
-				<BoxNum>
-					<ItemBoxNum>
-						<TextNumName>Вага</TextNumName>
-						<InputNameNum id="kg" placeholder="kg" /><TextKg>kg</TextKg>
-					</ItemBoxNum>
-					<ItemBoxNum>
-						<TextNumName>Начинка</TextNumName>
-						<InputNameNum id="nachinka" placeholder="начинка" />
-					</ItemBoxNum>
-					<ItemBoxNum>
-						<TextNumName>Додаткові послуги</TextNumName>
-						<AddPOslug>Прикраси з мастики</AddPOslug>
-						<AddPOslug>Живі квіти</AddPOslug>
-					</ItemBoxNum>
-					<ItemBoxNum>
-						<Addwish>
-							<TextNumName>Додаткові побажання</TextNumName>
-							<NoNUm>
-								<CheckBox type="checkbox"></CheckBox> 
-                                Не телефонуйте мені
-							</NoNUm>
-						</Addwish>
+	return(
+		hidden === false && (
+			<FeedbackBackdrop>
+		<GlawBox >
+			<BtnCloseModal onClick={closeModal}>
+			
+			<SvgLocation href={svg} alt="awd" />
+			</BtnCloseModal>
+			
+			<TitleName>Торт “Червоний оксамит”</TitleName>
+			<BoxNum>
+				<ItemBoxNum>
+					<TextNumName>Ім’я та прізвище</TextNumName>
+					<InputNameNum id="name" placeholder="name" />
+				</ItemBoxNum>
+				<ItemBoxNum>
+					<TextNumName>Номер телефону</TextNumName>
+					<InputNameNum id="num" placeholder="number" />
+				</ItemBoxNum>
+			</BoxNum>
+			<Linia></Linia>
+			<BoxNum>
+				<ItemBoxNum>
+					<TextNumName>Вага</TextNumName>
+					<InputNameNum id="kg" placeholder="kg" /><TextKg>kg</TextKg>
+				</ItemBoxNum>
+				<ItemBoxNum>
+					<TextNumName>Начинка</TextNumName>
+					<InputNameNum id="nachinka" placeholder="начинка" />
+				</ItemBoxNum>
+				<ItemBoxNum>
+					<TextNumName>Додаткові послуги</TextNumName>
+					<AddPOslug>Прикраси з мастики</AddPOslug>
+					<AddPOslug>Живі квіти</AddPOslug>
+				</ItemBoxNum>
+				<ItemBoxNum>
+					<Addwish>
+						<TextNumName>Додаткові побажання</TextNumName>
+						<NoNUm>
+							<CheckBox type="checkbox"></CheckBox> 
+							Не телефонуйте мені
+						</NoNUm>
+					</Addwish>
 
-						<FeedbackTextarea id="addbobam"></FeedbackTextarea>
-					</ItemBoxNum>
-				</BoxNum>
-                <BoxBtn>
-                    <BtnREdg>
-                        <BtnRedag >
-                        <SvgPen href={pen}/> Редагувати
-                        </BtnRedag>
-                        <BtnOgolosh >
-                        Сторінка оголошення<SvgStrilrf href={stilka}/>
-                        </BtnOgolosh>
-                    </BtnREdg>
-                    <BtnLast onClick={()=> this.closeModal()} >
-                    Надіслати заявку
-                        </BtnLast>
-                </BoxBtn>
-			</GlawBox>
-			</FeedbackBackdrop>)
-		)
-	}
+					<FeedbackTextarea id="addbobam"></FeedbackTextarea>
+				</ItemBoxNum>
+			</BoxNum>
+			<BoxBtn>
+				<BtnREdg>
+					<BtnRedag >
+					<SvgPen href={pen}/> Редагувати
+					</BtnRedag>
+					<BtnOgolosh >
+					Сторінка оголошення<SvgStrilrf href={stilka}/>
+					</BtnOgolosh>
+				</BtnREdg>
+				<BtnLast onClick={closeModal} >
+				Надіслати заявку
+					</BtnLast>
+			</BoxBtn>
+		</GlawBox>
+		</FeedbackBackdrop>) ||  <AplicationSucc></AplicationSucc>
+	) 
 }
 
-export default shablonModal;
+export default ShablonModal;

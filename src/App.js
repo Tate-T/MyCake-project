@@ -12,6 +12,7 @@ function App() {
   const [verificationModal, setVerificationModal] = useState({ hidden: false, type: false });
   const pack = [setLoginModal, setSecondModal, setVerificationModal];
     return <>
+
       {/* <ModalResp/> */}
       <Main func={ setLoginModal } />
       {loginModal ? <Modal1 obj={pack} /> : <></>}
@@ -19,6 +20,7 @@ function App() {
       {secondModal.includes("register") ? <Modal2 obj={pack} check={secondModal} /> : <></>}
       {verificationModal.hidden ? <Modal3 textType={verificationModal.type ? "Вхід" : "Реєстрація"} obj={pack} /> : <></>}
       {console.log(verificationModal)}
+
     </>
   
 }

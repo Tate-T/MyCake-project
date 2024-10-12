@@ -1,3 +1,5 @@
+Senya, [12.10.2024 12:01]
+import { useState, useEffect } from "react";
 import { Header } from "../../components/general-components/Header/Header.styled";
 import { Container } from "../../components/general-components/Container/Container.styled";
 import { Logo } from "../../components/general-components/Logo/Logo.styled";
@@ -121,6 +123,7 @@ const HeroTitle = styled.h1`
   color: #011936;
 `;
 
+Senya, [12.10.2024 12:01]
 const HeroDescription = styled.p`
   font-family: "Verdana";
   font-size: 16px;
@@ -331,6 +334,7 @@ const CakesList = styled.ul`
   } */
 `;
 
+Senya, [12.10.2024 12:01]
 const CakeCardTitle = styled.h2`
   color: ${(props) => props.theme.colors.accentColor};
   font-family: Verdana;
@@ -405,6 +409,40 @@ const MoreClientsBtn = styled.button`
 `;
 
 export const Main = ({ func }) => {
+  const [typesOfCakes, setTypesOfCakes] = useState([]);
+  const [typesOfCakesisLoading, setTypesOfCakesIsLoading] = useState(false);
+  const [varietyOfProducts, setVarietyOfProducts] = useState([]);
+  const [varietyOfProductsIsLoading, setVarietyOfProductsIsLoading] =
+    useState(false);
+
+  useEffect(() => {
+    setTypesOfCakesIsLoading(true);
+    fetch("http://localhost:3000/typesOfCakes")
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setTypesOfCakes(data);
+        // console.log(typesOfCakes);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setTypesOfCakesIsLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    setVarietyOfProductsIsLoading(true);
+    fetch("http://localhost:3000/varietyOfProducts")
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setVarietyOfProducts(data);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setVarietyOfProductsIsLoading(false);
+      });
+  }, []);
 
   return (
     <>
@@ -428,10 +466,21 @@ export const Main = ({ func }) => {
               </li>
             </HeaderList>
 
-            <HeaderBlock>
+Senya, [12.10.2024 12:01]
+<HeaderBlock>
               <ChatIcon />
               <LoginIcon />
-              <button style={{backgroundColor: "transparent", fontFamily: "Verdana"}} onClick={ () => {func(true)} }>Увійти</button>
+              <button
+                style={{
+                  backgroundColor: "transparent",
+                  fontFamily: "Verdana",
+                }}
+                onClick={() => {
+                  func(true );
+                }}
+              >
+                Увійти
+              </button>
             </HeaderBlock>
           </HeaderWrapper>
         </Container>
@@ -453,43 +502,15 @@ export const Main = ({ func }) => {
                 <HeroSearchBtn type="button">Шукати</HeroSearchBtn>
               </HeroSearchInputBox>
               <HeroPopularSearchList>
-                <HeroPopularSearchItem>
-                  <HeroPopularSearchText>
-                    На день народження
-                  </HeroPopularSearchText>
-                </HeroPopularSearchItem>
-                <HeroPopularSearchItem>
-                  <HeroPopularSearchText>З фруктами</HeroPopularSearchText>
-                </HeroPopularSearchItem>
-                <HeroPopularSearchItem>
-                  <HeroPopularSearchText>Патріотичні</HeroPopularSearchText>
-                </HeroPopularSearchItem>
-                <HeroPopularSearchItem>
-                  <HeroPopularSearchText>Для чоловіків</HeroPopularSearchText>
-                </HeroPopularSearchItem>
-                <HeroPopularSearchItem>
-                  <HeroPopularSearchText>Для весілля</HeroPopularSearchText>
-                </HeroPopularSearchItem>
-                <HeroPopularSearchItem>
-                  <HeroPopularSearchText>Без глютену</HeroPopularSearchText>
-                </HeroPopularSearchItem>
-                <HeroPopularSearchItem>
-                  <HeroPopularSearchText>Веганські</HeroPopularSearchText>
-                </HeroPopularSearchItem>
-                <HeroPopularSearchItem>
-                  <HeroPopularSearchText>Без цукру </HeroPopularSearchText>
-                </HeroPopularSearchItem>
-                <HeroPopularSearchItem>
-                  <HeroPopularSearchText>Для дівчат</HeroPopularSearchText>
-                </HeroPopularSearchItem>
-                <HeroPopularSearchItem>
-                  <HeroPopularSearchText>З квітами</HeroPopularSearchText>
-                </HeroPopularSearchItem>
-                <HeroPopularSearchItem>
-                  <HeroPopularSearchText>
-                    Класичні рецепти
-                  </HeroPopularSearchText>
-                </HeroPopularSearchItem>
+                {typesOfCakesisLoading === true
+                  ? console.log("downloading")
+                  : typesOfCakes.map((type) => (
+                      <HeroPopularSearchItem key={type.id}>
+                        <HeroPopularSearchText>
+                          {type.type}
+                        </HeroPopularSearchText>
+                      </HeroPopularSearchItem>
+                    ))}
                 <HeroOtherVariantsItem>
                   <p>Інші варіанти</p>
                   <svg
@@ -555,7 +576,9 @@ export const Main = ({ func }) => {
                   >
                     <g clip-path="url(#clip0_5811_8201)">
                       <path
-                        d="M8.58984 16.59L13.1698 12L8.58984 7.41L9.99984 6L15.9998 12L9.99984 18L8.58984 16.59Z"
+
+Senya, [12.10.2024 12:01]
+d="M8.58984 16.59L13.1698 12L8.58984 7.41L9.99984 6L15.9998 12L9.99984 18L8.58984 16.59Z"
                         fill="#43607C"
                       />
                     </g>
@@ -568,7 +591,15 @@ export const Main = ({ func }) => {
                 </CakesArrowBtn>
               </HeroArrowsBox>
               <HeroProductsList>
-                <li>
+                {varietyOfProductsIsLoading === true
+                  ? console.log("downloading")
+                  : varietyOfProducts.map((product) => (
+                      <li key={product.id}>
+                        <img src={product.src} alt={product.name} />
+                        <h2>{product.name}</h2>
+                      </li>
+                    ))}
+                {/* <li>
                   <img src={heroProductImg1} alt="cake" />
                   <h2>Торти</h2>
                 </li>
@@ -587,7 +618,7 @@ export const Main = ({ func }) => {
                 <li>
                   <img src={heroProductImg5} alt="cake" />
                   <h2>Печиво</h2>
-                </li>
+                </li> */}
               </HeroProductsList>
             </div>
             <HeroImgsBox>
@@ -658,7 +689,9 @@ export const Main = ({ func }) => {
           </CakesBox>
           <CakesList>
             <li>
-              <img src={cakeImg1} alt="cake-1" />
+
+Senya, [12.10.2024 12:01]
+<img src={cakeImg1} alt="cake-1" />
               <CakesCardBox>
                 <CakeCardTitle>520 грн</CakeCardTitle>
                 <CakeCardSubtitle>
@@ -765,7 +798,9 @@ export const Main = ({ func }) => {
             <li>
               <img src={cupcakeImg1} alt="cupcake-1" />
               <CakesCardBox>
-                <CakeCardTitle>520 грн</CakeCardTitle>
+
+Senya, [12.10.2024 12:01]
+<CakeCardTitle>520 грн</CakeCardTitle>
                 <CakeCardSubtitle>
                   Пасхальні капкейки шоколадні та ванільні
                 </CakeCardSubtitle>
@@ -831,15 +866,9 @@ export const Main = ({ func }) => {
       <Container>
         <ListState></ListState>
       </Container>
-
       <Container>
         <Footerr></Footerr>
       </Container>
-      <Container><ListTopPip></ListTopPip></Container>
-      <Container><ListState></ListState></Container>
-
-      <Container>  <Footerr></Footerr></Container>
-
     </>
   );
 };
