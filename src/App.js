@@ -3,6 +3,7 @@ import Modal1 from "./components/loginModals/Modal1";
 import Modal2 from "./components/loginModals/Modal2";
 import Modal3 from "./components/loginModals/Modal3";
 import ModalResp from "./components/loginModals/ModalResp";
+import aboutConfectioner from "./pages/AboutConfectioner/AboutConfectioner";
 import { Main } from "./pages/main/Main";
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
   }
   render() {
     return <>
+    {/* <aboutConfectioner/> */}
       <ModalResp/>
       {/* <Main /> */}
       {/* {this.state.loginModal ? <Modal1 obj={this} /> : <></>}

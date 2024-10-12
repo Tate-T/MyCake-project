@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import styled from "styled-components";
 import Overlay from "./Overlay";
 
@@ -79,7 +80,6 @@ const RespText = styled.p`
   letter-spacing: -0.42px;
   width: 620px;
   margin-bottom: 10px;
-
 `;
 
 const Response = styled.input`
@@ -93,7 +93,6 @@ const Response = styled.input`
   border: 1px solid var(--Border, #dfdfdf);
   width: 620px;
   margin-bottom: 40px;
-
 `;
 
 const SendRespBtn = styled.button`
@@ -139,25 +138,40 @@ const CloseSending = styled.button`
 `;
 
 const ModalResp = () => {
-  return (
-    <Overlay>
-      <Modal>
-        <ContainerResp>
-          <RespTitle>Відгук</RespTitle>
-          <CloseModalBtn>&#x2715;</CloseModalBtn>
-        </ContainerResp>
+  const [isOpen, setIsOpen] = useState(false);
 
-        <RespGoodInput placeholder='Торт "Червоний оксамит"' />
-        <ResponseTitle>Відгук</ResponseTitle>
-        <RespText>
-          Опишіть ваші враження від товару, комунікацій з продавцем, процесу
-          покупки, тощо
-        </RespText>
-        <Response />
-        <SendRespBtn>Відправити відгук</SendRespBtn>
-        <CloseSending>Скасувати</CloseSending>
-      </Modal>
-    </Overlay>
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
+
+  return (
+    <>
+      <button onClick={handleOpenModal}>Відкрити модалку</button>
+      {isOpen && (
+        <Overlay>
+          <Modal>
+            <ContainerResp>
+              <RespTitle>Відгук</RespTitle>
+              <CloseModalBtn onClick={handleCloseModal}>&#x2715;</CloseModalBtn>
+            </ContainerResp>
+
+            <RespGoodInput placeholder='Торт "Червоний оксамит"' />
+            <ResponseTitle>Відгук</ResponseTitle>
+            <RespText>
+              Опишіть ваші враження від товару, комунікацій з продавцем, процесу
+              покупки, тощо
+            </RespText>
+            <Response />
+            <SendRespBtn>Відправити відгук</SendRespBtn>
+            <CloseSending onClick={handleCloseModal}>Скасувати</CloseSending>
+          </Modal>
+        </Overlay>
+      )}
+    </>
   );
 };
 
