@@ -3,7 +3,7 @@ import Modal1 from "./components/loginModals/Modal1";
 import Modal2 from "./components/loginModals/Modal2";
 import Modal3 from "./components/loginModals/Modal3";
 import ModalResp from "./components/loginModals/ModalResp";
-import Articles from "./pages/Articles";
+import aboutConfectioner from "./pages/AboutConfectioner/AboutConfectioner";
 import { Main } from "./pages/main/Main";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
   const pack = [setLoginModal, setSecondModal, setVerificationModal];
     return <>
 
+
       {/* <ModalResp/> */}
       <Main func={ setLoginModal } />
       {loginModal ? <Modal1 obj={pack} /> : <></>}
@@ -20,6 +21,7 @@ function App() {
       {secondModal.includes("register") ? <Modal2 obj={pack} check={secondModal} /> : <></>}
       {verificationModal.hidden ? <Modal3 textType={verificationModal.type ? "Вхід" : "Реєстрація"} obj={pack} /> : <></>}
       {console.log(verificationModal)}
+
 
     </>
   
