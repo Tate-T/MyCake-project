@@ -404,7 +404,7 @@ const MoreClientsBtn = styled.button`
   margin-right: auto;
 `;
 
-export const Main = ({obj}) => {
+export const Main = ({ func }) => {
 
   return (
     <>
@@ -431,7 +431,7 @@ export const Main = ({obj}) => {
             <HeaderBlock>
               <ChatIcon />
               <LoginIcon />
-              <button style={{backgroundColor: "transparent", fontFamily: "Verdana"}} onClick={ () => { obj.setState({ loginModal: true })} }>Увійти</button>
+              <button style={{backgroundColor: "transparent", fontFamily: "Verdana"}} onClick={ () => {func(true)} }>Увійти</button>
             </HeaderBlock>
           </HeaderWrapper>
         </Container>

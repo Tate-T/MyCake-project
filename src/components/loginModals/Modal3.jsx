@@ -74,11 +74,12 @@ const Form = styled.form`
     }
 `;
 
-export default function Modal3({textType, obj}) {
+export default function Modal3({ textType, obj }) {
+  const [, , setVerificationModal] = obj;
     return <Overlay>
         <Modal>
             <TopBar object={obj} text={textType} />
-            <Form onSubmit={(e) => {e.preventDefault(); obj.setState({verificationModal: {hidden: false}})}}>
+            <Form onSubmit={(e) => {e.preventDefault(); setVerificationModal({hidden: false})}}>
                 <div>
                     <p>Введіть код з повідомлення</p>
                     <ul>

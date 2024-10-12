@@ -4,17 +4,8 @@ import backup from "./backup.svg";
 import data from "./data.json";
 import Searchbar from "../components/general-components/Searchbar/Searchbar.jsx";
 import Footerr from "../components/general-components/Footer/Footer.jsx";
-
-const safeArr = [];
-function createUniqueId() {
-  const id = "id" + Math.random().toString(16).slice(2);
-  if (safeArr.includes(id)) {
-    createUniqueId();
-  } else {
-    safeArr.push(id);
-    return id;
-  }
-}
+import { nanoid } from "nanoid";
+import { useState } from "react";
 
 const Filter = styled.div`
   width: 252px;
@@ -213,16 +204,7 @@ const RightArrow = styled.div`
     cursor: pointer;
 `;
 
-const result = data.map((card) => {
-  return (
-    <Card key={createUniqueId()}>
-      <img src={card.url} alt="bakery" />
-      <h3>{card.title}</h3>
-      <p>{card.description}</p>
-      <button>Читати далі</button>
-    </Card>
-  );
-});
+
 
 const Checkbox = styled.input`
   width: 25px;
@@ -236,6 +218,16 @@ const Checkbox = styled.input`
 `;
 
 export default function Articles() {
+  const [list, setList] = useState(data.map((card) => {
+  return (
+    <Card key={nanoid()}>
+      <img src={card.url} alt="bakery" />
+      <h3>{card.title}</h3>
+      <p>{card.description}</p>
+      <button>Читати далі</button>
+    </Card>
+  );
+}));
   return (
     <>
       <section>
@@ -256,45 +248,54 @@ export default function Articles() {
               <h2>Цікаві та корисні статті</h2>
               <ul>
                 Тематика
-                <li key={createUniqueId()}>
+                <li key={nanoid()}>
                   <Checkbox type="checkbox"></Checkbox>
                   Рецепти
                 </li>
-                <li key={createUniqueId()}>
+                <li key={nanoid()}>
                   <Checkbox type="checkbox"></Checkbox>
                   Корисні поради на кухні
                 </li>
-                <li key={createUniqueId()}>
+                <li key={nanoid()}>
                   <Checkbox type="checkbox"></Checkbox>
                   Підбірки
                 </li>
-                <li key={createUniqueId()}>
+                <li key={nanoid()}>
                   <Checkbox type="checkbox"></Checkbox>
                   Робота з клієнтами
                 </li>
-                <li key={createUniqueId()}>
+                <li key={nanoid()}>
                   <Checkbox type="checkbox"></Checkbox>
                   Цікаві історії
                 </li>
               </ul>
             </Filter>
-            <List>{result}</List>
-            <LoadMore>
+            <List>{list}</List>
+            <LoadMore onClick={() => {setList([...list, ...data.map((card) => {
+              return (
+                <Card key={nanoid()}>
+                  <img src={card.url} alt="bakery" />
+                  <h3>{card.title}</h3>
+                  <p>{card.description}</p>
+                  <button>Читати далі</button>
+                </Card>
+              );
+            })]) }}>
               <img src={backup} alt="LoadMore" />
               Більше статей
             </LoadMore>
             <Pagination>
               <LeftArrow>&#x3c;</LeftArrow>
-              <li key={createUniqueId()}>1</li>
-              <li key={createUniqueId()}>2</li>
+              <li key={nanoid()}>1</li>
+              <li key={nanoid()}>2</li>
               <li
-                key={createUniqueId()}
+                key={nanoid()}
                 style={{ fontWeight: "700", background: "#FDAD6D" }}
               >
                 3
               </li>
-              <li key={createUniqueId()}>4</li>
-              <li key={createUniqueId()}>5</li>
+              <li key={nanoid()}>4</li>
+              <li key={nanoid()}>5</li>
               <RightArrow>&#x3e;</RightArrow>
             </Pagination>
           </div>
