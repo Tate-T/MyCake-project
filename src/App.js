@@ -1,14 +1,13 @@
-import { Confecioners } from './pages/Confecioners/Confecioners'
-import { Main } from './pages/main/Main'
-import ShablonForm from './components/shablonForm/ShablonForm'
-import AplicationSucc from './components/shablonForm/Aplication'
+import { Confecioners } from "./pages/Confecioners/Confecioners";
+import { Main } from "./pages/main/Main";
+
 function App() {
-	return (
-		<>
-			<ShablonForm></ShablonForm>
-			{/* <Main /> */}
-		</>
-	)
+  return (
+    <>
+
+      <Main />
+    </>
+  )
 }
 
-export default App
+export default App;
