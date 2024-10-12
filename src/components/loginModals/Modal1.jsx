@@ -106,13 +106,14 @@ const OptionsList = styled.ul`
   }
 `;
 
-const Modal1 = ({obj}) => {
+const Modal1 = ({ obj }) => {
+  const [setLoginModal, setSecondModal] = obj;
     return (
       <Overlay>
         <Modal>
           <TopBar object={obj} text="Реєстрація" />
           <OptionsList>
-            <li onClick={() => {obj.setState({secondModal: "registerCustomer", loginModal: false})}}>
+            <li onClick={() => { setSecondModal("registerCustomer");  setLoginModal(false)}}>
               <img src={cookie} alt="cookie" />
               <div>
                 <div>
@@ -122,7 +123,7 @@ const Modal1 = ({obj}) => {
                 <img src={firstArrow} alt="arrow" />
               </div>
             </li>
-            <li onClick={() => {obj.setState({secondModal: "registerProducer", loginModal: false})}}>
+            <li onClick={() => { setSecondModal("registerProducer"); setLoginModal(false)}}>
               <img src={cupcake} alt="cookie" />
               <div>
                 <div>
@@ -133,7 +134,7 @@ const Modal1 = ({obj}) => {
               </div>
             </li>
           </OptionsList>
-          <LowerBar  text="Я вже маю акаунт, хочу просто увійти" handleOnClick={() => {obj.setState({secondModal: "login", loginModal: false})}} />
+          <LowerBar text="Я вже маю акаунт, хочу просто увійти" handleOnClick={() => { setSecondModal("login"); setLoginModal(false)}} />
         </Modal>
       </Overlay>
     );
