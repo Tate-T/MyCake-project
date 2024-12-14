@@ -9,6 +9,7 @@ import Position from "../../imgs/position.svg";
 import styled from "styled-components";
 // import Articles from "../Articles.jsx";
 // import {GoodsPage} from "../Goods/GoodsPage.jsx";
+
 // import ConfectionerProducts from "../ConfectionerProducts/ConfectionerProducts.jsx";
 // !hero imgs
 import heroAdditionalImg1 from "../../imgs/hero-additional/hero-additional-1.png";
