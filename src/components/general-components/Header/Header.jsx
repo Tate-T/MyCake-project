@@ -5,7 +5,7 @@ import Chat from "../../../imgs/chat.svg";
 import Login from "../../../imgs/login.svg";
 import Position from "../../../imgs/position.svg";
 import styled from "styled-components";
-
+import { Link ,NavLink } from 'react-router-dom'
 const LocationBtn = styled.button`
   border-radius: 36px;
   background-color: rgb(255, 242, 242);
@@ -17,25 +17,23 @@ const LocationBtn = styled.button`
 `;
 
 const HeaderList = styled.ul`
-  margin-left: auto;
-  margin-right: auto;
-  gap: 30px;
-  display: flex;
-  align-items: center;
-`;
+	margin-left: auto;
+	margin-right: auto;
+	gap: 30px;
+	display: flex;
+	align-items: center;
 
-const HeaderLink = styled.a`
-  font-family: "Verdana";
-  color: rgb(1, 25, 54);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 120%;
-`;
+	li:hover {
+		cursor: pointer;
+	}
+`
+
+
 
 const HeaderBlock = styled.div`
-  display: flex;
-  align-items: center;
-`;
+	display: flex;
+	align-items: center;
+`
 
 const ChatIcon = styled.img`
   margin-right: 30px;
@@ -62,44 +60,63 @@ PositionIcon.defaultProps = {
   src: Position,
 };
 const HeaderWrapper = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-`;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+`
+const HeaderLink = styled(NavLink)`
+  	font-family: 'Verdana';
+	color: rgb(1, 25, 54);
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 120%;
 
- export const HeaderComp = () => {
+  &.active {
+   color: #8E4A4E;
+ }
+`
+const HeaderComp = () => {
     return (
       <Header>
         <Container>
-          <HeaderWrapper>
-            <Logo>MyCake</Logo>
-            <LocationBtn type="button">
-              <PositionIcon />
-              Вся Україна
-            </LocationBtn>
-            <HeaderList>
-              <li>
-                <HeaderLink>Десерти</HeaderLink>
-              </li>
-              <li>
-                <HeaderLink>Кращі кондитери</HeaderLink>
-              </li>
-              <li>
-                <HeaderLink>Корисні статті</HeaderLink>
-              </li>
-            </HeaderList>
-  
-            <HeaderBlock>
-              <ChatIcon />
-              <LoginIcon />
-              Увійти
-            </HeaderBlock>
-          </HeaderWrapper>
-        </Container>
+                  <HeaderWrapper>
+                    <Logo>MyCake</Logo>
+                    <LocationBtn type="button">
+                      <PositionIcon />
+                      Вся Україна
+                    </LocationBtn>
+                    <HeaderList>
+                      <li>
+                        <HeaderLink to="/desserts">Десерти</HeaderLink>
+                      </li>
+                      <li>
+                        <HeaderLink to="/confecionres">Кращі кондитери</HeaderLink>
+                      </li>
+                      <li>
+                        <HeaderLink to="desserts">Корисні статті</HeaderLink>
+                      </li>
+                    </HeaderList>
+                    <HeaderBlock>
+                      <ChatIcon />
+                      <LoginIcon />
+                      <button
+                        style={{
+                          backgroundColor: 'transparent',
+                          fontFamily: 'Verdana',
+                        }}
+                        // onClick={() => {
+                        //   obj.setState({ loginModal: true });
+                        // }}
+                      >
+                        Увійти
+                      </button>
+                    </HeaderBlock>
+                  </HeaderWrapper>
+                </Container>
       </Header>
     );
   };
   ;
 
 
-export default Header;
+export default HeaderComp;
