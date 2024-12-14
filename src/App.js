@@ -8,6 +8,8 @@ import { Main } from './pages/main/Main'
 import { Route, Routes } from 'react-router-dom'
 import { Desserts } from './pages/Desserts/desserts'
 import {Confecioners} from "./pages/Confecioners/Confecioners"
+import Articles from './pages/Articles'
+import InfoConfecoiners from './pages/InfoConfecioners/InfoConfecioners'
 function App() {
 	const [loginModal, setLoginModal] = useState(false)
 	const [secondModal, setSecondModal] = useState('')
@@ -22,6 +24,8 @@ function App() {
       <Route path="/" element={<Main />}></Route>
 				<Route path="/desserts" element={<Desserts />}></Route>
         <Route path="/confecionres" element={<Confecioners />}></Route>
+        <Route path="/articles" element={<Articles />}></Route>
+        <Route path="/infoConfecoiners" element={<InfoConfecoiners />}></Route>
 			</Routes>
 
 			{/* <ModalResp/>

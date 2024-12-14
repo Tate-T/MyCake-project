@@ -6,7 +6,7 @@ import Searchbar from "../components/general-components/Searchbar/Searchbar.jsx"
 import Footerr from "../components/general-components/Footer/Footer.jsx";
 import { nanoid } from "nanoid";
 import { useState } from "react";
-
+import HeaderComp from "../components/general-components/Header/Header.jsx";
 const Filter = styled.div`
   width: 252px;
   height: 311px;
@@ -231,6 +231,7 @@ export default function Articles() {
   return (
     <>
       <section>
+        <HeaderComp></HeaderComp>
         <Container>
           <Searchbar>
             <input type="text" placeholder="Як приготувати класичний чізкейк" />

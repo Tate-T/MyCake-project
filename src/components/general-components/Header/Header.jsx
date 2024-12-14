@@ -6,6 +6,8 @@ import Login from "../../../imgs/login.svg";
 import Position from "../../../imgs/position.svg";
 import styled from "styled-components";
 import { Link ,NavLink } from 'react-router-dom'
+import Modal1 from "../../loginModals/Modal1";
+import { useState } from "react";
 const LocationBtn = styled.button`
   border-radius: 36px;
   background-color: rgb(255, 242, 242);
@@ -76,11 +78,13 @@ const HeaderLink = styled(NavLink)`
  }
 `
 const HeaderComp = () => {
+  const [isOpen, setIsOpen] = useState(false)
     return (
+      <>
       <Header>
         <Container>
                   <HeaderWrapper>
-                    <Logo>MyCake</Logo>
+                   <Link to="/"><Logo>MyCake</Logo></Link> 
                     <LocationBtn type="button">
                       <PositionIcon />
                       Вся Україна
@@ -93,7 +97,7 @@ const HeaderComp = () => {
                         <HeaderLink to="/confecionres">Кращі кондитери</HeaderLink>
                       </li>
                       <li>
-                        <HeaderLink to="desserts">Корисні статті</HeaderLink>
+                        <HeaderLink to="/articles">Корисні статті</HeaderLink>
                       </li>
                     </HeaderList>
                     <HeaderBlock>
@@ -104,16 +108,21 @@ const HeaderComp = () => {
                           backgroundColor: 'transparent',
                           fontFamily: 'Verdana',
                         }}
-                        // onClick={() => {
-                        //   obj.setState({ loginModal: true });
-                        // }}
+                        onClick={() => {
+                          setIsOpen(true) 
+                        }}
                       >
-                        Увійти
+                      {/* <Link to="/infoConfecoiners">Увійти</Link>
+                         */}
+                         Увійти
                       </button>
                     </HeaderBlock>
                   </HeaderWrapper>
                 </Container>
       </Header>
+      {isOpen && <Modal1/>}
+      </>
+      
     );
   };
   ;
