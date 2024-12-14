@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Header } from "../../components/general-components/Header/Header.styled";
+import  HeaderComp  from '../../components/general-components/Header/Header'
 import { Container } from "../../components/general-components/Container/Container.styled";
 import { Logo } from "../../components/general-components/Logo/Logo.styled";
 import Searchbar from "../../components/general-components/Searchbar/Searchbar.jsx";
@@ -322,33 +322,9 @@ const DessertsBtn = styled.button`
 export const Desserts = () => {
   return (
     <>
-      <Header>
-        <Container>
-          <HeaderWrapper>
-            <Logo>MyCake</Logo>
-            <LocationBtn>
-              <PositionIcon />
-              Вся Україна
-            </LocationBtn>
-            <HeaderList>
-              <li>
-                <HeaderLinkSpan>Десерти</HeaderLinkSpan>
-              </li>
-              <li>
-                <HeaderLink>Кращі кондитери</HeaderLink>
-              </li>
-              <li>
-                <HeaderLink>Корисні статті</HeaderLink>
-              </li>
-            </HeaderList>
-            <HeaderBlock>
-              <ChatIcon />
-              <LoginIcon />
-              Увійти
-            </HeaderBlock>
-          </HeaderWrapper>
-        </Container>
-      </Header>
+      <HeaderComp>
+        
+      </HeaderComp>
       <Container>
         <Searchbar placeholder="Шоколадний торт з квітами" />
         <SectionDesserts>
