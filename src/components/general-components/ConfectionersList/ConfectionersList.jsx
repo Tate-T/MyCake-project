@@ -2,6 +2,7 @@ import { ListWrap, ConfItem, ConfAvatar, ConfCakeItemWrap, ConfInfo, ConfCakeIte
 import { Container } from "../Container/Container.styled";
 import ArrowLeft from '../../../imgs/arrow-left.png';
 import ArrowRight from '../../../imgs/arrow-right.png';
+import { Link ,NavLink } from 'react-router-dom'
 import userImg from '../../../imgs/StatePng/TopPip1.png'
 import productImg1 from '../../../imgs/cakes/cake-2.jpg'
 import productImg2 from '../../../imgs/cakes/cake-1.jpg'
@@ -15,6 +16,7 @@ export function ConfectionersList() {
                 <ListWrap>
                     <ConfItem>
                         <ConfAvatar>
+                            <Link to='/confectioner/about'>
                             <ConfAvatarImg><img src={userImg} /></ConfAvatarImg>
                             <ConfAvatarName>Інна Пономаренко</ConfAvatarName>
                             <ConfAvatarComments>23 відгуки</ConfAvatarComments>
@@ -24,6 +26,7 @@ export function ConfectionersList() {
                                 <button>Цукерки</button>
                                 <button>+3</button>
                             </ConfAvatarButtonList>
+                            </Link>
                         </ConfAvatar>
                         <ConfInfo>
                             <ConfSubInfo>
@@ -74,6 +77,7 @@ export function ConfectionersList() {
                     </ConfItem>
                     <ConfItem>
                         <ConfAvatar>
+                            <Link to='/confectioner/about'>
                             <ConfAvatarImg><img src={userImg} /></ConfAvatarImg>
                             <ConfAvatarName>Інна Пономаренко</ConfAvatarName>
                             <ConfAvatarComments>23 відгуки</ConfAvatarComments>
@@ -83,6 +87,7 @@ export function ConfectionersList() {
                                 <button>Цукерки</button>
                                 <button>+3</button>
                             </ConfAvatarButtonList>
+                            </Link>
                         </ConfAvatar>
                         <ConfInfo>
                             <ConfSubInfo>
@@ -133,6 +138,7 @@ export function ConfectionersList() {
                     </ConfItem>
                     <ConfItem>
                         <ConfAvatar>
+                            <Link to='/confectioner/about'>
                             <ConfAvatarImg><img src={userImg} /></ConfAvatarImg>
                             <ConfAvatarName>Інна Пономаренко</ConfAvatarName>
                             <ConfAvatarComments>23 відгуки</ConfAvatarComments>
@@ -142,6 +148,7 @@ export function ConfectionersList() {
                                 <button>Цукерки</button>
                                 <button>+3</button>
                             </ConfAvatarButtonList>
+                            </Link>
                         </ConfAvatar>
                         <ConfInfo>
                             <ConfSubInfo>
@@ -192,6 +199,7 @@ export function ConfectionersList() {
                     </ConfItem>
                     <ConfItem>
                         <ConfAvatar>
+                            <Link to='/confectioner/about'>
                             <ConfAvatarImg><img src={userImg} /></ConfAvatarImg>
                             <ConfAvatarName>Інна Пономаренко</ConfAvatarName>
                             <ConfAvatarComments>23 відгуки</ConfAvatarComments>
@@ -201,6 +209,7 @@ export function ConfectionersList() {
                                 <button>Цукерки</button>
                                 <button>+3</button>
                             </ConfAvatarButtonList>
+                            </Link>
                         </ConfAvatar>
                         <ConfInfo>
                             <ConfSubInfo>

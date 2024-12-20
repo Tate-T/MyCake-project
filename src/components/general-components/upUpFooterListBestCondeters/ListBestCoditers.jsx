@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link ,NavLink } from 'react-router-dom'
 import topImg1 from "../../../../src/imgs/StatePng/TopPip1.png";
 import topImg2 from "../../../../src/imgs/StatePng/TopPip2.png";
 import topImg3 from "../../../../src/imgs/StatePng/TopPip3.png";
@@ -192,6 +193,7 @@ export default function ListTopPip() {
       <Ul>
 
 <li>
+<Link to='/confectioner/about'>
     <InfoCardBox>
     <Img src={topImg1} alt="info" />
     <InfoBox>
@@ -215,9 +217,10 @@ export default function ListTopPip() {
 
     </InfoBox>
     </InfoCardBox>
-
+</Link>
 </li>
 <li>
+<Link to='/confectioner/about'>
     <InfoCardBox>
     <Img src={topImg3} alt="info" />
     <InfoBox>
@@ -241,9 +244,10 @@ export default function ListTopPip() {
 
     </InfoBox>
     </InfoCardBox>
-
+</Link>
 </li>
 <li>
+<Link to='/confectioner/about'>
     <InfoCardBox>
     <Img src={topImg2} alt="info" />
     <InfoBox>
@@ -267,7 +271,7 @@ export default function ListTopPip() {
 
     </InfoBox>
     </InfoCardBox>
-
+</Link>
 </li>
 
       </Ul>

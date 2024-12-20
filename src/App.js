@@ -3,13 +3,14 @@ import Modal1 from './components/loginModals/Modal1'
 import Modal2 from './components/loginModals/Modal2'
 import Modal3 from './components/loginModals/Modal3'
 import ModalResp from './components/loginModals/ModalResp'
-import aboutConfectioner from './pages/AboutConfectioner/AboutConfectioner'
+import AboutConfectioner from './pages/AboutConfectioner/AboutConfectioner'
 import { Main } from './pages/main/Main'
 import { Route, Routes } from 'react-router-dom'
 import { Desserts } from './pages/Desserts/desserts'
 import {Confecioners} from "./pages/Confecioners/Confecioners"
 import Articles from './pages/Articles'
 import InfoConfecoiners from './pages/InfoConfecioners/InfoConfecioners'
+import ConfectionerProducts from './pages/ConfectionerProducts/ConfectionerProducts'
 function App() {
 	const [loginModal, setLoginModal] = useState(false)
 	const [secondModal, setSecondModal] = useState('')
@@ -26,6 +27,10 @@ function App() {
         <Route path="/confecionres" element={<Confecioners />}></Route>
         <Route path="/articles" element={<Articles />}></Route>
         <Route path="/infoConfecoiners" element={<InfoConfecoiners />}></Route>
+		<Route path="/confectioner">
+			<Route path="products" element={<ConfectionerProducts />}></Route>
+			<Route path="about" element={<AboutConfectioner />}></Route>
+		</Route>
 			</Routes>
 
 			{/* <ModalResp/>

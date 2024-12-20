@@ -3,6 +3,7 @@ import { Container } from "../../components/general-components/Container/Contain
 import ListTopPip from "../../components/general-components/upUpFooterListBestCondeters/ListBestCoditers.jsx";
 import ListState from "../../components/general-components/upFooterListState/ListState.jsx";
 import { theme } from "../../theme.js";
+import { Link ,NavLink } from 'react-router-dom'
 import confectionerProducts from "../confectionerProducts.json";
 import loadmore from "../../svg/loadmore.svg";
 import Searchbar from "../../components/general-components/Searchbar/Searchbar.jsx";
@@ -334,14 +335,18 @@ class ConfectionerProducts extends Component{
                         <Navigation>
                 <ConfectionerList>
                     <li>
+                        <Link to="/confectioner/about">
                         <button>
                             Про кондитера
                         </button>
+                        </Link>
                     </li>
                     <li>
+                        <Link to="/confectioner/products">
                         <button confectionerActive="1">
                             Товари
                         </button>
+                        </Link>
                     </li>
                 </ConfectionerList>
                 <Filters>
