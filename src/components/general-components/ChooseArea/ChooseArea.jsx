@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import Icon from "../../../imgs/close.svg";
 import ArrowRight from "../../../imgs/arrow-right.svg";
+import areas from "./areas.json";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
 
 const Overlay = styled.div`
   position: fixed;
@@ -74,47 +78,73 @@ ArrowIcon.defaultProps = {
   src: ArrowRight,
 };
 
-const areas = [
-  "Вся Україна",
-  "Львівська",
-  "Вінницька",
-  "Миколаївська",
-  "Волинська",
-  "Одеська",
-  "Дніпропетровська",
-  "Полтавська",
-  "Донецька",
-  "Рівненська",
-  "Житомирська",
-  "Сумська",
-  "Закарпатська",
-  "Тернопільська",
-  "Запорізька",
-  "Харківська",
-  "Івано-Франківська",
-  "Херсонська",
-  "Київська",
-  "Хмельницька",
-  "Кіровоградська",
-  "Черкаська",
-  "Крим",
-  "Чернігівська",
-  "Луганська",
-  "Чернівецька",
-];
+// const areas = [
+//   "Вся Україна",
+//   "Львівська",
+//   "Вінницька",
+//   "Миколаївська",
+//   "Волинська",
+//   "Одеська",
+//   "Дніпропетровська",
+//   "Полтавська",
+//   "Донецька",
+//   "Рівненська",
+//   "Житомирська",
+//   "Сумська",
+//   "Закарпатська",
+//   "Тернопільська",
+//   "Запорізька",
+//   "Харківська",
+//   "Івано-Франківська",
+//   "Херсонська",
+//   "Київська",
+//   "Хмельницька",
+//   "Кіровоградська",
+//   "Черкаська",
+//   "Крим",
+//   "Чернігівська",
+//   "Луганська",
+//   "Чернівецька",
+// ];
 
-export function ChooseArea() {
+export function ChooseArea({ closeAreaModal }) {
+  const handleArea = (e) => {
+    if (e.currentTarget === e.target) {
+      return;
+    }
+    let text = "";
+    switch (e.target.nodeName) {
+      case "LI":
+        text = e.target.children[0].textContent;
+        break;
+      case "IMG":
+        console.log("img");
+        text = e.target.parentNode.parentNode.children[0].textContent;
+      case "BUTTON":
+        console.log("btn");
+        text = e.target.parentNode.children[0].textContent;
+      default:
+        break;
+    }
+    console.log(text);
+    if (text !== "Київська") {
+      toast.info("На жаль, у нас немає доставки у вашу область");
+    } else {
+      closeAreaModal();
+    }
+  };
+  const [areasState, setAreasState] = useState(areas);
   return (
     <Overlay>
       <AreaModal>
-        <CloseBtn type="button">
+        <CloseBtn type="button" onClick={closeAreaModal}>
           <CloseIcon />
         </CloseBtn>
         <AreaTitle>Оберіть область</AreaTitle>
-        <AreasList>
-          {areas.map((area) => (
-            <AreasItem>
-              <AreasText>{area}</AreasText>
+        <AreasList onClick={handleArea}>
+          {areasState.map((area) => (
+            <AreasItem key={area.id} id={area.id}>
+              <AreasText>{area.text}</AreasText>
               <button type="button">
                 <ArrowIcon />
               </button>
@@ -122,6 +152,7 @@ export function ChooseArea() {
           ))}
         </AreasList>
       </AreaModal>
+      <ToastContainer />
     </Overlay>
   );
 }
