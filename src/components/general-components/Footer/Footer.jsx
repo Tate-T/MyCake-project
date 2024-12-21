@@ -3,7 +3,7 @@ import location from '../../../svg/location_pin.svg'
 import yut from '../../../svg/Youtube_black.svg'
 import inst from '../../../svg/Instagram.svg'
 import { Container } from '../Container/Container.styled'
-
+import { Link ,NavLink } from 'react-router-dom'
 const Foooter = styled.footer`
 	background: var(--Black, #011936);
 	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
@@ -154,6 +154,17 @@ const List = styled.ul`
 	display: flex;
 	align-items: center;
 `
+const FooterLink = styled(NavLink)`
+  	font-family: 'Verdana';
+	color: rgb(255, 255, 255);
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 120%;
+
+  &.active {
+   color: #8E4A4E;
+ }
+`
 export default function Footerr() {
 	return (
 		<>
@@ -162,7 +173,7 @@ export default function Footerr() {
 					<List>
 						<li>
 							<Boxes>
-								<GlawText>My Cake</GlawText>
+								<Link to="/"><GlawText>MyCake</GlawText></Link> 
 								<Location>
                 <a href='https://www.google.com/maps/place/%D0%91%D0%B5%D1%80%D0%BB%D1%96%D0%BD,+%D0%9D%D1%96%D0%BC%D0%B5%D1%87%D1%87%D0%B8%D0%BD%D0%B0/@52.4089794,12.6368873,8.55z/data=!4m6!3m5!1s0x47a84e373f035901:0x42120465b5e3b70!8m2!3d52.5200066!4d13.404954!16zL20vMDE1NnE?entry=ttu&g_ep=EgoyMDI0MTAwOS4wIKXMDSoASAFQAw%3D%3D'><SvgLocation href={location} /></a>
 									
@@ -171,16 +182,11 @@ export default function Footerr() {
 							</Boxes>
 						</li>
 						<li>
+                    
 							<BoxesFlex>
-								<Links href="#">
-									<MediumText>Десерти</MediumText>
-								</Links>
-								<Links href="#">
-									<MediumText>Кращі кондитери</MediumText>
-								</Links>
-								<Links href="#">
-									<MediumText>Корисні статті</MediumText>
-								</Links>
+                        <FooterLink to="/desserts"><MediumText>Десерти</MediumText></FooterLink>
+                        <FooterLink to="/confecionres"><MediumText>Кращі кондитери</MediumText></FooterLink>
+                        <FooterLink to="/articles"><MediumText>Корисні статті</MediumText></FooterLink>
 							</BoxesFlex>
 						</li>
 						<li>
