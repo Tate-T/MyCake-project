@@ -3,7 +3,6 @@ import Modal1 from "./components/loginModals/Modal1";
 import Modal2 from "./components/loginModals/Modal2";
 import Modal3 from "./components/loginModals/Modal3";
 import ModalResp from "./components/loginModals/ModalResp";
-import aboutConfectioner from "./pages/AboutConfectioner/AboutConfectioner";
 import { Main } from "./pages/main/Main";
 import { Route, Routes } from "react-router-dom";
 import { Desserts } from "./pages/Desserts/desserts";
@@ -11,6 +10,8 @@ import { Confecioners } from "./pages/Confecioners/Confecioners";
 import Articles from "./pages/Articles";
 import { ArticlePage } from "./pages/Article/Article";
 import InfoConfecoiners from "./pages/InfoConfecioners/InfoConfecioners";
+import AboutConfectioner from './pages/AboutConfectioner/AboutConfectioner';
+import ConfectionerProducts from './pages/ConfectionerProducts/ConfectionerProducts';
 function App() {
   const [loginModal, setLoginModal] = useState(false);
   const [secondModal, setSecondModal] = useState("");
@@ -28,6 +29,10 @@ function App() {
         <Route path="/articles" element={<Articles />}></Route>
         <Route path="/articles/:id" element={<ArticlePage />} />
         <Route path="/infoConfecoiners" element={<InfoConfecoiners />}></Route>
+		<Route path="/confectioner">
+			<Route path="products" element={<ConfectionerProducts />}></Route>
+			<Route path="about" element={<AboutConfectioner />}></Route>
+		</Route>
       </Routes>
 
       {/* <ModalResp/>
