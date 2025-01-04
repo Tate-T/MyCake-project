@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Header } from "../../components/general-components/Header/Header.styled";
+// import { Header } from "../../components/general-components/Header/Header.styled";
+import Header from "../../components/general-components/Header/Header";
 import { Container } from "../../components/general-components/Container/Container.styled";
 import { Logo } from "../../components/general-components/Logo/Logo.styled";
 import Chat from "../../imgs/chat.svg";
@@ -140,7 +141,7 @@ const ArticlesItem = styled.li`
   padding-bottom: 20px;
   border-radius: 5px;
   box-shadow: 0px 2px 10px 0px rgba(67, 96, 124, 0.25);
-  &:last-child div  {
+  &:last-child div {
     justify-content: flex-end;
     padding-left: 0;
     padding-right: 20px;
@@ -194,34 +195,7 @@ ArticlesImg.defaultProps = {
 export const ArticlePage = () => {
   return (
     <>
-      <Header>
-        <Container>
-          <HeaderWrapper>
-            <Logo>MyCake</Logo>
-            <LocationBtn>
-              <PositionIcon />
-              Вся Україна
-            </LocationBtn>
-            <HeaderList>
-              <li>
-                <HeaderLink>Десерти</HeaderLink>
-              </li>
-              <li>
-                <HeaderLink>Кращі кондитери</HeaderLink>
-              </li>
-              <li>
-                <HeaderLink>Корисні статті</HeaderLink>
-              </li>
-            </HeaderList>
-
-            <HeaderBlock>
-              <ChatIcon />
-              <LoginIcon />
-              Article.jsx
-            </HeaderBlock>
-          </HeaderWrapper>
-        </Container>
-      </Header>
+      <Header />
       <Article>
         <Container>
           <ArticleInput />

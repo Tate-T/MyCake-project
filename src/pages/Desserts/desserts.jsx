@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import  HeaderComp  from '../../components/general-components/Header/Header'
-import { Container } from "../../components/general-components/Container/Container.styled";
-import { Logo } from "../../components/general-components/Logo/Logo.styled";
+import  HeaderComp  from '../../components/general-components/Header/Header.jsx'
+import { Container } from "../../components/general-components/Container/Container.styled.js";
+import { Logo } from "../../components/general-components/Logo/Logo.styled.js";
 import Searchbar from "../../components/general-components/Searchbar/Searchbar.jsx";
 import Chat from "../../imgs/chat.svg";
 import Login from "../../imgs/login.svg";
 import Position from "../../imgs/position.svg";
-import Footerr from "../../components/general-components/Footer/Footer";
-import ListState from "../../components/general-components/upFooterListState/ListState";
-import ListTopPip from "../../components/general-components/upUpFooterListBestCondeters/ListBestCoditers";
+import Footerr from "../../components/general-components/Footer/Footer.jsx";
+import ListState from "../../components/general-components/upFooterListState/ListState.jsx";
+import ListTopPip from "../../components/general-components/upUpFooterListBestCondeters/ListBestCoditers.jsx";
 import cakeImg1 from "../../imgs/cakes/cake-1.jpg";
 import cakeImg2 from "../../imgs/cakes/cake-2.jpg";
 import cakeImg3 from "../../imgs/cakes/cake-3.jpg";
